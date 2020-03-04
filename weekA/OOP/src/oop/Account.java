@@ -17,6 +17,13 @@ public class Account extends Object {
 	
 	//fields store state are are declared with a type:
 	//fields are written in lowerCamelCase
+	
+	/**
+	 * The number of existing accounts.  
+	 * Used to generate new account numbers.
+	 */
+	static int totalNumberOfAccounts = 0;
+	
 	/**
 	 * The number that identifies the account in our system
 	 */
@@ -43,6 +50,12 @@ public class Account extends Object {
 		//this() calls another constructor in the same class.
 		//super() MUST eventually be called every time a constructor is used
 		super();
+		
+		//Every time an account is created, increment the count of accounts
+		Account.totalNumberOfAccounts++;
+		
+		//Set the account number
+		this.accountNumber = Account.totalNumberOfAccounts;
 	}
 	
 	//Multiple constructors are very common.  Here's one that lets us
@@ -52,6 +65,13 @@ public class Account extends Object {
 		this.accountNumber = accountNumber;
 		this.username = username;
 		this.password = password;
+		
+		//Every time an account is created, increment the count of accounts
+		Account.totalNumberOfAccounts++;
+		
+		//Set the account number
+		this.accountNumber = Account.totalNumberOfAccounts;
+		System.out.println("Overriding manually input account number");
 	}
 	
 	//Methods require a return type, and all their parameters

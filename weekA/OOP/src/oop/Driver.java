@@ -13,7 +13,6 @@ public class Driver {
 		myAccount = new Account();
 		
 		//We can set fields on our new Account object:
-		myAccount.accountNumber = 40;
 		myAccount.username = "adking08";
 		myAccount.password = "wasspord";
 		
