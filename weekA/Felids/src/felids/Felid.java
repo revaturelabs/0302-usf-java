@@ -1,7 +1,9 @@
 package felids;
 
 /**
- * A felid. Abstract classes cannot be instantiated and can have abstract methods.
+ * A felid. Abstract Parent class of specific feline species (Cats, Tigers)
+ * 
+ * Abstract classes cannot be instantiated and can have abstract methods.
  * 
  * @author Revature
  *

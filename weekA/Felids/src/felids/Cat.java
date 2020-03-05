@@ -43,4 +43,11 @@ public class Cat extends Felid {
     System.out.println(this.name + " says \"MEOW\"");
   }
 
+  @Override
+  public String toString() {
+    return this.name + ", a " 
+        + this.pattern + " " + this.color + " " + this.sex + " cat" +
+        " that is " + this.size + " units big.";
+  }
+
 }
