@@ -65,10 +65,24 @@ public class Driver {
       sum = myFirstArray[i] + sum;
     }
     
+    //create a string by concatenating all the numbers in myFirstArray
+    // we want: 3579111315171921
+    String concatenatedArray = "";
+    for(int i=0; i<10; i++) {
+      concatenatedArray += Integer.toString(myFirstArray[i]);
+    }
+    //another way:
+    System.out.println(Arrays.toString(myFirstArray)
+        .replaceAll(",", "")
+        .replaceAll(" ", "")
+        //The \\ make an "escape character" for regular expressions
+        .replaceAll("\\[", "")
+        .replaceAll("\\]", "")
+        );
+    
     System.out.println(Arrays.toString(myFirstArray));
     System.out.println(sum);
-    
-    
+    System.out.println(concatenatedArray);
     
   }
   
