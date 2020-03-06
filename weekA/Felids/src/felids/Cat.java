@@ -1,6 +1,8 @@
 package felids;
 
-public class Cat extends Felid {
+import java.io.Serializable;
+
+public class Cat extends Felid implements Domesticated, Serializable {
 
   static int population = 0;
 
@@ -41,6 +43,12 @@ public class Cat extends Felid {
 
   void mew() {
     System.out.println(this.name + " says \"MEOW\"");
+  }
+  
+  @Override
+  public void greet() {
+    System.out.println(this.name + " encounters a person...");
+    mew();
   }
 
   @Override

@@ -8,7 +8,7 @@ package felids;
  * @author Revature
  *
  */
-public abstract class Felid {
+public abstract class Felid implements Predator {
 
   int size;
   Color color;
