@@ -27,9 +27,15 @@ public abstract class Felid implements Predator, Comparable<Felid> {
   }
 
   @Override
-  //This compareTo will make larger Felids > smaller Felids
+  //This compareTo will sort felids using the String.compareTo method
+  // on their names.  It will be alphabetical (ASCII).
   public int compareTo(Felid o) {
-    return this.size - o.size;
+    return this.name.compareTo(o.name);
   }
+
+  //This compareTo will make larger Felids > smaller Felids
+//  public int compareTo(Felid o) {
+//    return this.size - o.size;
+//  }
 
 }
