@@ -75,8 +75,6 @@ public class Driver {
     
     System.out.println("Sorted:" + mySortedSet);
     
-    //Strings go by ASCII: alphabetical, with all capitals coming before
-    // all lowercase
     Set<String> mySortedStrings = new TreeSet<String>();
     mySortedStrings.add("A");
     mySortedStrings.add("C");

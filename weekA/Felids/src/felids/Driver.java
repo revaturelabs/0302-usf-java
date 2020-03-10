@@ -1,5 +1,9 @@
 package felids;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class Driver {
 
   public static void main(String[] args) {
@@ -25,5 +29,14 @@ public class Driver {
     System.out.println(Tiger.population);
     
     testCat.greet();
+    
+    //in order to use TreeSet, must implement Comparable
+    // not necessary for HashSet.
+    Set<Cat> myCats = new TreeSet<Cat>();
+    myCats.add(testCat);
+    myCats.add(new Cat("Emmy", Color.ORANGE, 500));
+    myCats.add(new Cat("Roger", Color.BROWN, 400));
+    
+    System.out.println(myCats);
   }
 }

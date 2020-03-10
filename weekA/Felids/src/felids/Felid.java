@@ -8,7 +8,7 @@ package felids;
  * @author Revature
  *
  */
-public abstract class Felid implements Predator {
+public abstract class Felid implements Predator, Comparable<Felid> {
 
   int size;
   Color color;
@@ -24,6 +24,12 @@ public abstract class Felid implements Predator {
 
   void sleep() {
     System.out.println(this.name + " is taking a nap");
+  }
+
+  @Override
+  //This compareTo will make larger Felids > smaller Felids
+  public int compareTo(Felid o) {
+    return this.size - o.size;
   }
 
 }
