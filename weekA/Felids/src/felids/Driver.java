@@ -38,5 +38,12 @@ public class Driver {
     myCats.add(new Cat("Roger", Color.BROWN, 400));
     
     System.out.println(myCats);
+    
+    testCat.eat();
+    testCat.eat("fish");
+    testCat.eat(4);
+    //varargs takes a variable number of arguments:
+    testCat.eat("fish", "celery");
+    testCat.eat("fish", "cat food", "mice", "cheese");
   }
 }

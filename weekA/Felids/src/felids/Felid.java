@@ -35,9 +35,11 @@ public abstract class Felid implements Predator, Comparable<Felid> {
   // one method that takes varargs:
   void eat(String... foods) {
     //In here, foods is a String[].
+    System.out.print(this.name + " is eating: ");
     for(int i=0; i<foods.length; i++) {
-      this.eat(foods[i]);
+      System.out.print(foods[i] + ", ");
     }
+    System.out.println();
   }
 
   void sleep() {
