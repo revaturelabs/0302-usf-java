@@ -1,7 +1,10 @@
 package com.revature.mydatastructures;
 
-import java.util.Arrays;
-
+/**
+ * MyStack just takes Strings because of generic array problems
+ * @author Revature
+ *
+ */
 public class MyStack {
   
   String[] contents;
@@ -57,8 +60,9 @@ public class MyStack {
     for(int i=0; i<=this.currentIndex ;i++) {
       out += this.contents[i] + ",";
     }
-    out += "]";
-    return out;
+    //Remove the trailing comma, and replace it with ] 
+    // before returning:
+    return out.substring(0, out.length()-1) + "]";
   }
 
 }
