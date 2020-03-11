@@ -53,8 +53,12 @@ public class MyStack {
 
   @Override
   public String toString() {
-    return "MyStack [contents=" + Arrays.toString(contents) + ", currentIndex=" + currentIndex
-        + "]";
+    String out = "[";
+    for(int i=0; i<=this.currentIndex ;i++) {
+      out += this.contents[i] + ",";
+    }
+    out += "]";
+    return out;
   }
 
 }
