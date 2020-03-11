@@ -19,7 +19,25 @@ public abstract class Felid implements Predator, Comparable<Felid> {
   abstract void vocalize();
 
   void eat() {
-    System.out.println(this.name + " is eating");
+    System.out.println(this.name + " is eating something unspecified");
+  }
+  
+  void eat(String food) {
+    System.out.println(this.name + " is eating " + food);
+  }
+  
+  void eat(Integer food) {
+    System.out.println(this.name + " can't eat numbers");
+  }
+  
+  //varargs food: varargs means a variable number of arguments
+  // instead of defining one method for each number, we define
+  // one method that takes varargs:
+  void eat(String... foods) {
+    //In here, foods is a String[].
+    for(int i=0; i<foods.length; i++) {
+      this.eat(foods[i]);
+    }
   }
 
   void sleep() {
