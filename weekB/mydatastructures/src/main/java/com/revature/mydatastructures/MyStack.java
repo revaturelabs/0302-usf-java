@@ -16,7 +16,27 @@ public class MyStack {
   
   void push(String element) {
     this.currentIndex++;
+    if(currentIndex == this.contents.length) {
+      this.doubleCapacity();
+    }
     this.contents[currentIndex] = element;
+  }
+  
+  String pop() {
+    //This is what we'll eventually return:
+    String out;
+    if(this.currentIndex>=0) {
+      //Set out to the element to-be-removed from the stack
+      out = this.contents[this.currentIndex];
+      //Remove the value from the underlying array
+      this.contents[this.currentIndex] = null;
+      //decrement currentIndex by 1
+      this.currentIndex -= 1;
+    } else {
+      System.out.println("Cannot pop from empty stack");
+      out = null;
+    }
+    return out;
   }
   
   /**
