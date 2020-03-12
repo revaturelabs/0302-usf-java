@@ -45,10 +45,22 @@ public class Driver {
     // Bubble sort: swap values when the L value is higher
     // than the R value. 2 (nested) loops are involved, so
     // worst-case time complexity is O(n^2);
+    /*
+     * Instructions:
+     * - Start with 2 (nested) for loops.  Each should loop
+     *      to the array's length minus 1.
+     * - inside the inner for loop, write an if statement comparing
+     *      two adjacent values: arr[j] > arr[j+1]
+     * - If the condition is true, swap those 2 values in the array, i.e.
+     *      int temp = arr[j];
+     *      arr[j] = arr[j+1];
+     *      arr[j+1] = temp;    
+     */
     int bubbleCounter = 0;
-    int[] arr = new int[] {4, 2, 1, 3, 70, 33, 1, 40, 9999, -300};
+    int[] arr = new int[] {1,2,3,4,5,6,7,8,9,-300};
     for (int i = 0; i < arr.length - 1; i++) {
-      for (int j = 0; j < arr.length - 1; j++) {
+      int swaps = 0; //track the number of actual swaps that occur
+      for (int j = 0; j < arr.length - i - 1; j++) {
         int leftVal = arr[j];
         int rightVal = arr[j + 1];
         // System.out.println("Leftval: " + Integer.toString(leftVal));
@@ -56,10 +68,14 @@ public class Driver {
         if (leftVal > rightVal) {
           arr[j + 1] = leftVal;
           arr[j] = rightVal;
+          swaps++;
         }
         bubbleCounter++;
       }
       System.out.println(Arrays.toString(arr));
+      if(swaps == 0) {
+        break; //exit the outer loops
+      }
     }
     
     System.out.println("BubbleSort count: " + bubbleCounter);
