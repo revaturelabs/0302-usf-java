@@ -8,8 +8,40 @@ public class Driver {
     bigO();
     bubbleSort();
     arrayOfArrays();
-    recursiveInfinitePrint();
-
+    //recursiveInfinitePrint();
+    myUsefulRecursion(5);
+    //What should myRecursiveFactorial(1) return? 1
+    //What should myRecursiveFactorial(2) return? 2
+    //What should myRecursiveFactorial(5) return? 120
+    System.out.println(myRecursiveFactorial(5));
+  }
+  
+  /**
+   * Factorial of n is n*(n-1)*(n-2)*...*2*1 and is represented
+   *  with n!.  So:
+   *  
+   * 5! = 5*4*3*2*1 = 120 = 5 * 4!
+   * 4! = 4*3*2*1 = 24 = 4 * 3!
+   * 1! = 1
+   * 10! = 3628800
+   * 
+   */
+  public static int myRecursiveFactorial(int n) {
+    //exit condition
+    if(n==1) {
+      return 1;
+    }
+    //recursive step
+    return n*myRecursiveFactorial(n-1);
+  }
+  
+  public static void myUsefulRecursion(int n) {
+    //exit condition:
+    if(n <= 0) {
+      System.out.println("Done!");
+    } else {
+      myUsefulRecursion(n-1);
+    }
   }
   
   public static void recursiveInfinitePrint() {
