@@ -5,6 +5,32 @@ import java.util.Arrays;
 public class Driver {
 
   public static void main(String[] args) {
+    bigO();
+    bubbleSort();
+    arrayOfArrays();
+    recursiveInfinitePrint();
+
+  }
+  
+  public static void recursiveInfinitePrint() {
+    System.out.println("This will happen until a Stack Overflow");
+    recursiveInfinitePrint();
+  }
+  
+  public static void arrayOfArrays() {
+    //2D arrays are just arrays of arrays
+    int[][] arrayOfIntArrays = new int[][] {{1,2},{4,3}};
+    System.out.println(Arrays.deepToString(arrayOfIntArrays));
+    //access the second element of the first array:
+    System.out.println(arrayOfIntArrays[0][1]);
+    //access the second element of the second array:
+    System.out.println(arrayOfIntArrays[1][1]);
+    //access the first element of the second array:
+    System.out.println(arrayOfIntArrays[1][0]);
+    //general rule: array[index of nested array][index of element]
+  }
+
+  public static void bigO() {
     // make a constant N:
     final int N = 10000;
 
@@ -42,24 +68,22 @@ public class Driver {
     }
     System.out.println("logarithm count: " + logarithmCounter);
 
+  }
+  
+  public static void bubbleSort() {
     // Bubble sort: swap values when the L value is higher
     // than the R value. 2 (nested) loops are involved, so
     // worst-case time complexity is O(n^2);
     /*
-     * Instructions:
-     * - Start with 2 (nested) for loops.  Each should loop
-     *      to the array's length minus 1.
-     * - inside the inner for loop, write an if statement comparing
-     *      two adjacent values: arr[j] > arr[j+1]
-     * - If the condition is true, swap those 2 values in the array, i.e.
-     *      int temp = arr[j];
-     *      arr[j] = arr[j+1];
-     *      arr[j+1] = temp;    
+     * Instructions: - Start with 2 (nested) for loops. Each should loop to the array's length minus
+     * 1. - inside the inner for loop, write an if statement comparing two adjacent values: arr[j] >
+     * arr[j+1] - If the condition is true, swap those 2 values in the array, i.e. int temp =
+     * arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp;
      */
     int bubbleCounter = 0;
-    int[] arr = new int[] {1,2,3,4,5,6,7,8,9,-300};
+    int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, -300};
     for (int i = 0; i < arr.length - 1; i++) {
-      int swaps = 0; //track the number of actual swaps that occur
+      int swaps = 0; // track the number of actual swaps that occur
       for (int j = 0; j < arr.length - i - 1; j++) {
         int leftVal = arr[j];
         int rightVal = arr[j + 1];
@@ -73,14 +97,12 @@ public class Driver {
         bubbleCounter++;
       }
       System.out.println(Arrays.toString(arr));
-      if(swaps == 0) {
-        break; //exit the outer loops
+      if (swaps == 0) {
+        break; // exit the outer loops
       }
     }
-    
-    System.out.println("BubbleSort count: " + bubbleCounter);
 
   }
-  
+
 
 }
