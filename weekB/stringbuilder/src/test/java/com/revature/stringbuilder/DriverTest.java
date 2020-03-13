@@ -19,4 +19,24 @@ public class DriverTest {
     assertTrue(result.equals(""));
   }
   
+ 
+  @Test
+  public void produceSingleAWithArgOne() {
+    //Driver.produceStringOfAs(1) => "A"
+    String result = Driver.produceStringOfAs(1);
+    assertTrue(result.equals("A"));
+  }
+  
+  @Test
+  
+  public void producesTenAWithArgTen() {
+    
+    String result = Driver.produceStringOfAs(10);
+    assertTrue(result.equals("AAAAAAAAAA"));
+    
+    
+    
+    
+    
+  }
 }

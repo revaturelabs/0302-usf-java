@@ -65,4 +65,33 @@ create packages that match src/main/java
 We are writing our first test.  We're going to test that
 produceStringOfAs(0) => "".
 Typically we name our tests something long and descriptive.
+We make sure to call the method we're testing in our test to produce a result
+Then we use JUnit Assert methods to assert the result is what we expect.
+
+Unit testing, what we do with JUnit, is the most basic level of testing.
+Often projects will have many many unit tests.  At a higher level, if we're
+testing how more than one method or function works together, we call that
+an "Integration Test".  An integration test might be used to make sure we're
+writing to file successfully.  A good way to recognize an integration test
+is that integration tests will rely on multiple classes or on resources
+outside of Java (files, databases, internet connections, ...).
+
+Another high-level testing concept we should be familiar with is
+TDD: Test Driven Development.  TDD is a style of writing code in which we write
+unit tests first, THEN write the code to pass them.
+After writing the tests, they'll all fail at first.  Then you write code to
+pass those tests until all of the tests pass and your method(s) are complete.
+TDD is especially useful if you have a complicated or confusing method to write.
+
+We'll do a little TDD today: a calculator with fibonacci numbers
+
+
+
+
+
+
+
+
+
+
 
