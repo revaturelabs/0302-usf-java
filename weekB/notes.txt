@@ -1,0 +1,18 @@
+Notes will go in this file for today.
+
+TODOs for the day:
+- Exceptions
+- Testing
+- JUnit
+- Map Interface (bonus!)
+- Basic Maven
+
+Extras:
+- fibonacci
+- StringBuilder/StringBuffer
+
+StringBuilder (quick):
+If we're building a String in many pieces, we end up using extra memory
+"a" + "b" + "c" + "d" + ...
+Each String produced "on the way" takes up memory.
+A StringBuilder lets us produce a String piece-by-piece more efficiently

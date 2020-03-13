@@ -13,7 +13,9 @@ public class Driver {
     //What should myRecursiveFactorial(1) return? 1
     //What should myRecursiveFactorial(2) return? 2
     //What should myRecursiveFactorial(5) return? 120
-    System.out.println(myRecursiveFactorial(5));
+    System.out.println(myRecursiveFactorial(5)); //120
+    //Try to write a recursive sum, where
+    // myRecursiveSum(n) => n + (n-1) + (n-2) + ... + 2 + 1;
   }
   
   /**
