@@ -85,6 +85,15 @@ TDD is especially useful if you have a complicated or confusing method to write.
 
 We'll do a little TDD today: a calculator with fibonacci numbers
 
+We'll have our calculator have some methods: add, subtract, multiply, divide.
+We'll also give it fibonacci(int n) methods that return the nth fibonacci number
+Fibonacci numbers are a series of numbers that start at 1 and are produced
+iteratively by adding the prior 2 numbers in the series together.
+example:
+1 1 2 3 5 8 13 21 34 55 89 ...
+
+In TDD, we write our tests first, so let's head to the src/main/test folder
+
 
 
 
