@@ -27,5 +27,37 @@ if main calls a series of other methods rather
 than being a long list of instructions
 
 
+JUnit: A very popular utility for Unit Testing in Java.
+Testing is ensuring that your code functions as intended.  We write tests
+to check that the output of our methods is what it should be, we write tests
+to ensure we can connect to a DB successfully, we write tests to make sure
+our website works.... All of the different parts and functionalities of your
+program can be tested.
+The most basic tests are called "Unit Tests".  These are tests that ensure
+an individual method is working as intended.  They automate the process we already
+do after writing a method: pass in values and make sure the output is as expected!
 
+Is Unit Testing run by the JVM? yes, with the help of a tool called JUnit.
+However, we run tests separately from running the program, normally ahead of time.
 
+Do we produce the values for tests? Yes, we write both the input values to pass
+in to methods AND the expected output.
+
+The biggest payoff for using Unit tests (and other tests) occurs in a large project
+Unit testing can make sure your entire project works without any individual person
+having to "manually test".
+
+To write Unit tests, we need to add JUnit to our project.  To do so:
+1) go to mvnrepository.com
+2) search for JUnit in the box at the top
+3) click on JUnit (NOT JUnit Jupiter)
+4) click on 4.13 to select that version
+5) copy the dependency text in the box at the bottom of the screen
+6) open up the pom.xml in your project
+7) after </version>, type "<dependencies>" -- it should add "</dependencies>"
+	afterwards automatically
+8) between the two dependencies tags, paste the code from mvnrepository
+9) save the file, and refresh Maven (Alt+f5 or similar)
+
+In our maven projects, tests go in src/test/java.  We typically
+create packages that match src/main/java
