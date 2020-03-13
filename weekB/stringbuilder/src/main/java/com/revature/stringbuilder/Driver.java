@@ -4,7 +4,8 @@ public class Driver {
   
   public static void main(String[] args) {
     //StringBuilder should be faster with a large enough String
-    
+    final int length = 100000;
+    System.out.println(produceStringOfAs(length).substring(1,10));
   }
   
   /**
