@@ -64,7 +64,13 @@ public class CalculatorTest {
     assertEquals(result, 15);
   }
   
-  //TODO: write tests for other methods!
+  @Test
+  public void divideTenByTwoGetFive() {
+    int result = basicCalc.divide(10, 2);
+    assertEquals(5, result); //This gets us a nice failure trace
+  }
+  
+  
 
 }
 
