@@ -61,3 +61,8 @@ To write Unit tests, we need to add JUnit to our project.  To do so:
 
 In our maven projects, tests go in src/test/java.  We typically
 create packages that match src/main/java
+
+We are writing our first test.  We're going to test that
+produceStringOfAs(0) => "".
+Typically we name our tests something long and descriptive.
+
