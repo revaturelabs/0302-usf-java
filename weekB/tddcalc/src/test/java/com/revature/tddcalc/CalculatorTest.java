@@ -61,7 +61,7 @@ public class CalculatorTest {
   @Test
   public void multiplyThreeAndFiveGetFifteen() {
     int result = basicCalc.multiply(3, 5);
-    assertEquals(result, 15);
+    assertEquals(15, result);
   }
   
   @Test
@@ -75,6 +75,24 @@ public class CalculatorTest {
   @Test(expected = ArithmeticException.class)
   public void divideFiveByZeroThrowArithmeticException() {
     int result = basicCalc.divide(5,0);
+  }
+  
+  @Test
+  public void firstFibonacciNumberIsOne() {
+    int result = basicCalc.fibonacci(0);
+    assertEquals(1, result);
+  }
+  
+  @Test
+  public void fifthFibonacciNumberIsFive() {
+    int result = basicCalc.fibonacci(4);
+    assertEquals(5, result);
+  }
+  
+  @Test
+  public void eighthFibonacciNumberIsTwentyOne() {
+    int result = basicCalc.fibonacci(7);
+    assertEquals(21, result);
   }
 }
 

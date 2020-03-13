@@ -1,10 +1,10 @@
 Notes will go in this file for today.
 
 TODOs for the day:
-- Exceptions
+- Exceptions x
 - Testing
 - JUnit
-- Map Interface (bonus!)
+- Map Interface (bonus!) x
 - Basic Maven
 
 Extras:
@@ -95,7 +95,18 @@ example:
 In TDD, we write our tests first, so let's head to the src/main/test folder
 in a new tdd project
 
+Maven: Build Automation & Dependency Management Tool
 
+Build Automation: it runs our "javac" and "java" commands for us.  It will
+also run our tests.
+Dependency Management: maven downloads and "installs" any dependencies our
+Java projects need.  We just need to place the dependency details in the POM
+and Maven does the rest.  We saw this with JUnit today.
+
+A Maven project has code in src/main/java and tests in src/test/java.
+
+Finally, a Maven project is configured in the pom.xml.  POM stand for
+Project Object Model.
 
 
 
