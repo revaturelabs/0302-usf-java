@@ -21,4 +21,12 @@ public class Driver {
     return out;
   }
   
+  public static String produceStringOfAsWithStringBuilder(int length) {
+    StringBuilder out = new StringBuilder();
+    for(int i=0; i<length; i++) {
+      out.append("A");
+    }
+    return out.toString(); //converts StringBuilder to String
+  }
+  
 }
