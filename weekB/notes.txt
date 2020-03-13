@@ -16,3 +16,16 @@ If we're building a String in many pieces, we end up using extra memory
 "a" + "b" + "c" + "d" + ...
 Each String produced "on the way" takes up memory.
 A StringBuilder lets us produce a String piece-by-piece more efficiently
+
+
+Splitting code out into methods:
+Up to this point, we've been writing long main methods
+this is a bad practice.
+Instead, we should be splitting functionality off into methods
+our code will be easier to follow and more reusable
+if main calls a series of other methods rather
+than being a long list of instructions
+
+
+
+
