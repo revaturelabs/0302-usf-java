@@ -70,8 +70,12 @@ public class CalculatorTest {
     assertEquals(5, result); //This gets us a nice failure trace
   }
   
-  
-
+  //This annotation means the test will pass if an ArithmeticException happens
+  // This is a negative test: we're making sure our method fails appropriately
+  @Test(expected = ArithmeticException.class)
+  public void divideFiveByZeroThrowArithmeticException() {
+    int result = basicCalc.divide(5,0);
+  }
 }
 
 
