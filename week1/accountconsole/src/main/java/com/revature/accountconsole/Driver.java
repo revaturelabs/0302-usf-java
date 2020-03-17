@@ -46,6 +46,20 @@ public class Driver {
   }
   
   /**
+   * Runs the program that lets the user divide 2 numbers
+   */
+  public static void runDivision() {
+    System.out.println("Starting division program:");
+    System.out.println("Input numerator:");
+    String numeratorInput = sc.nextLine(); //this is easier to deal with than sc.nextInt();
+    System.out.println("Input denominator:");
+    String denominatorInput = sc.nextLine();
+    //For now, no Exception handling:
+    System.out.println(numeratorInput + " / " + denominatorInput + " = " +
+          (Integer.parseInt(numeratorInput)/Integer.parseInt(denominatorInput)));
+  }
+  
+  /**
    * Runs the program that echoes user input
    */
   public static void runEcho() {
