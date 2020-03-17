@@ -108,7 +108,18 @@ A Maven project has code in src/main/java and tests in src/test/java.
 Finally, a Maven project is configured in the pom.xml.  POM stand for
 Project Object Model.
 
+Recursive Fibonacci:
+The recursive step is a little bit different than prior examples.
+Our recursive fibonacci function calls itself twice instead of once.
 
+int recursiveFibonacci(int n) {
+	//exit condition or base case
+	if(n <= 1) {
+		return 1;
+	}
+	//recursive step
+	return recursiveFibonacci(n-1) + recursiveFibonacci(n-2);
+}
 
 
 

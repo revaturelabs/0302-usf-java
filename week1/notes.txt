@@ -1,0 +1,48 @@
+Week 1 notes:
+
+Collection vs Collections Framework vs java.util.Collections:
+Collection is the interface that is the root of the Collections Framework.
+Collections Framework is a feature in java.util that provides commonly used data structures
+java.util.Collections is a utility class for working with objects that implement Collection
+
+
+Exceptions: Exceptions exist to notify developers of and allow them to handle "exceptional behaviour".
+- behaviour that is outside of our intended behaviour, or state that is outside of our intended state can cause Exceptions
+- Exceptions only occur when something is going wrong, but we're happy to have them as developers because they help us handle
+	those problems.
+- Exceptions are Java objects, specifically java.lang.Exception
+- When an Exception occurs, we say that the Exception was *thrown*.
+- When an Exception is dealt with and the problem resolved, we say that the Exception was *handled*
+- The first step to handling an Exception is to *catch* that Exception.
+- When we want to cause an Exception to occur, we *throw* it.
+
+As developers, we need to make use of both halves of the above behaviour.  We will catch and handle Exceptions in our code
+and we'll throw Exceptions when something goes wrong.
+
+An unhandled Exception will crash your program.
+A handled Exception allows the program to continue.
+
+Related Java keywords:
+"throw" will let you throw an Exception.
+"try", "catch", and "finally" allow you to handle Exceptions.
+"throws" specifies that an Exception won't be handled by a given method. (we'll see this tomorrow)
+
+We'll use the throw keyword to throw an Exception when a problem has occurred in our code
+We'll use try-catch-finally to handle an Exception thrown elsewhere in our code
+We'll use throws to "pass the buck" and not handle an Exception in a given method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
