@@ -1,6 +1,8 @@
 package com.revature.accountconsole;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Driver {
   
@@ -8,6 +10,11 @@ public class Driver {
    * Canonical scanner for reading console input.
    */
   private static Scanner sc = new Scanner(System.in);
+  
+  /**
+   * All user accounts created.  We don't have file or DB storage just yet.
+   */
+  private static Set<Account> accounts = new HashSet<Account>();
 
   public static void main(String[] args) {
     //Run the menu repeatedly until the runMenu method returns 0, telling us to exit.
@@ -47,6 +54,39 @@ public class Driver {
         System.out.println("failed to recognize option");
         return 1;
     }
+  }
+  
+  public static void createAccount() {
+    System.out.println("Welcome to Account creation.");
+    //just one retry count, we'll let the user retry until 3 retries then boot them
+    int retryCount = 0;
+    while(retryCount<3) {
+      System.out.println("Please provide a username:");
+      String username =  sc.nextLine();
+      System.out.println("Please provide a password:");
+      String password = sc.nextLine();
+      System.out.println("Please provide a name for the Account");
+      String name = sc.nextLine();
+      try {
+        //attempt to create new account:
+        Account account = new Account(username, password, name);
+        //add newly created account to our registry of Accounts
+        Driver.accounts.add(account);
+        break;
+      } catch (PasswordTooShortException e) {
+        System.out.println("Password too short, please retry with password of 8 more characters");
+        retryCount++;
+      } catch (DuplicateUsernameException e) {
+        //TODO: make suggested username logic instead of retrying.
+        System.out.println("Username already exists in our system, please retry with another");
+        retryCount++;
+      }
+    }
+    //for better UX:
+    if(retryCount >=3) {
+      System.out.println("Retries exceeded, exiting account creation.");
+    }
+    
   }
   
   /**
