@@ -38,9 +38,43 @@ We use a scanner to take input from the user of our application.
 We typically switch on the user input to let the user choose application functionality.
 
 
+Exceptions vs. Errors:
+java.lang.Exception and java.lang.Error are both subclasses of a class called java.lang.Throwable.
+Any object that is Throwable works with the "throws", "try", "catch", "throw", "finally" keywords.
+java.lang.Exception works with these keywords only because it is Throwable.  java.lang.Error is the same way.
+The big difference between Exceptions and Errors is how we are expected to handle them.
+An Exception we should attempt to recover from -- we use try-catch to catch the Exception then
+write appropriate logic to handle it in our catch blocks.
+An Error, on the other hand, can almost never be fixed and we ought just let the program crash.
+Most Errors have to do with problems with the JVM like java.lang.StackOverflowError (out of space on the stack)
+and java.lang.OutOfMemoryError (out of space on the heap).
 
 
+What is RuntimeException?
+We've been using RuntimeException instead of Exception.  The reason is that RuntimeException and its child
+classes are *unchecked Exceptions*. This is in contrast to Exception (and all non-RuntimeExceptions), which
+ are *checked exceptions*.  Unchecked vs checked refers to whether the compiler enforces that you handle
+a given Exception.  Unchecked vs checked refers the *the compiler* checking whether you have Exception
+handling logic.
 
+In Java, we're expected to handle any Exception we can anticipate.  It's good practice.  Some Exceptions 
+the compiler can anticipate.  It forces us to write code to handle those exceptions before it will compile.
+Those are checked Exceptions.
+Some other Exceptions are difficult for the compiler to anticipate.  In these cases, its good practice to
+write code to handle those Exceptions, but the compiler can't force us to do it.
+
+Example checked Exceptions:
+FileNotFoundException when working with files
+SQLException when reading/writing to a database
+^ The compiler knows that these might occur every time we try to work with files or with databases,
+so these are checked Exceptions.
+
+Example unchecked Exceptions:
+ArrayIndexOutOfBoundsException
+ClassCastException
+ArithmeticException
+^ These exceptions might or might not occur any time we're working with Arrays, casting, or division,
+so these are unchecked exceptions -- the compiler doesn't know where they might happen.
 
 
 
