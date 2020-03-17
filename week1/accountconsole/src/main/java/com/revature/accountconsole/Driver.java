@@ -27,6 +27,7 @@ public class Driver {
     System.out.println("Welcome to the menu:");
     System.out.println("Choose 1 for echo program.");
     System.out.println("Choose 2 for token program.");
+    System.out.println("Choose 3 for division program");
     
     System.out.println("Choose 0 to exit.");
     String userOption = sc.nextLine();
@@ -36,6 +37,9 @@ public class Driver {
         return 1;
       case "2":
         getTokens();
+        return 1;
+      case "3":
+        runDivision();
         return 1;
       case "0":
         return 0;
@@ -47,6 +51,7 @@ public class Driver {
   
   /**
    * Runs the program that lets the user divide 2 numbers
+   * We'll keep our exception handling logic for division inside of this method
    */
   public static void runDivision() {
     System.out.println("Starting division program:");
@@ -54,9 +59,19 @@ public class Driver {
     String numeratorInput = sc.nextLine(); //this is easier to deal with than sc.nextInt();
     System.out.println("Input denominator:");
     String denominatorInput = sc.nextLine();
-    //For now, no Exception handling:
-    System.out.println(numeratorInput + " / " + denominatorInput + " = " +
+    try {
+      System.out.println(numeratorInput + " / " + denominatorInput + " = " +
           (Integer.parseInt(numeratorInput)/Integer.parseInt(denominatorInput)));
+    } catch(NumberFormatException e) {
+      System.out.println("Your input could not be parsed as a number");
+      System.out.println("Please run division program again to solve this problem."); //provides guidance to user
+    } catch(ArithmeticException e) {
+      System.out.println("Cannot divide by 0.  Please provide a different denominator:"); //prompt for different input
+      denominatorInput = sc.nextLine();
+      //We could solve this by looping, or through nested try-catch -- they can input 0 again:
+      System.out.println(numeratorInput + " / " + denominatorInput + " = " +
+          (Integer.parseInt(numeratorInput)/Integer.parseInt(denominatorInput)));
+    }
   }
   
   /**
