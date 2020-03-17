@@ -32,7 +32,10 @@ We'll use try-catch-finally to handle an Exception thrown elsewhere in our code
 We'll use throws to "pass the buck" and not handle an Exception in a given method.
 
 
-
+Scanner (quick):
+A Scanner is a convenience object in Java that enables console input.
+We use a scanner to take input from the user of our application.
+We typically switch on the user input to let the user choose application functionality.
 
 
 
