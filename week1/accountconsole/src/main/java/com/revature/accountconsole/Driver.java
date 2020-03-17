@@ -35,6 +35,8 @@ public class Driver {
     System.out.println("Choose 1 for echo program.");
     System.out.println("Choose 2 for token program.");
     System.out.println("Choose 3 for division program");
+    System.out.println("Choose 4 to create Account");
+    System.out.println("Choose Accounts to list all Accounts");
     
     System.out.println("Choose 0 to exit.");
     String userOption = sc.nextLine();
@@ -47,6 +49,12 @@ public class Driver {
         return 1;
       case "3":
         runDivision();
+        return 1;
+      case "4":
+        createAccount();
+        return 1;
+      case "Accounts":
+        System.out.println(Driver.accounts);
         return 1;
       case "0":
         return 0;
