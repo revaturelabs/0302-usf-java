@@ -13,6 +13,13 @@ public class Account {
   private String username;
   private String password;
   private String name;
+  
+  public Account(String username, String password, String name) throws DuplicateUsernameException, PasswordTooShortException {
+    //instead of using this.username=username and skipping out setter logic, lets just use it:
+    this.setUsername(username);
+    this.setPassword(password);
+    this.setName(name);
+  }
 
   public String getUsername() {
     return username;
@@ -30,6 +37,7 @@ public class Account {
     if(Account.usernames.contains(username)) {
       throw new DuplicateUsernameException();
     }
+    Account.usernames.add(username);
     this.username = username;
   }
 
