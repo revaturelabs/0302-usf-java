@@ -4,6 +4,40 @@ public class Driver {
   
   public static void main(String[] args) {
     keywordDemo();
+    commonRuntimeExceptions();
+  }
+  
+  /**
+   * Lets catch and handle some common runtime exceptions:
+   * ArithmeticException, which occurs when we divide or modulus (%) by 0.
+   * NullPointerException, which occurs when we try to access fields/methods on something that is null
+   * ArrayIndexOutOfBoundsException, which occurs when we try to access an array index that doesn't exist
+   */
+  public static void commonRuntimeExceptions() {
+    String myString = null;
+    int numerator = 5;
+    int denominator = 0;
+    
+    try {
+      int result = numerator / denominator;
+    } catch (ArithmeticException e) {
+      //In here we write logic to handle the exception.  Since division by 0 happens
+      // when the denominator is 0, lets just add 1 to denominator.
+      denominator++; //our catch blocks should solve problems
+    }
+    
+    int result = numerator / denominator;
+    System.out.println(result);
+    
+    try {
+      System.out.println("myString length: " + myString.length());
+    } catch (NullPointerException e) {
+      //catch blocks should always solve problems:
+      myString = "";
+    }
+    
+    System.out.println("myString length: " + myString.length());
+    
   }
   
   /**
@@ -76,7 +110,7 @@ public class Driver {
 //     while(true) {
 //       //This stops finally for executing
 //     }
-     recursiveFinallyCheck(); //finally still runs even if we fill up the stack
+     //recursiveFinallyCheck(); //finally still runs even if we fill up the stack
    } finally {
      System.out.println("Does this always run?");
    }
