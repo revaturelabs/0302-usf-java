@@ -10,8 +10,39 @@ public class Driver {
   private static Scanner sc = new Scanner(System.in);
 
   public static void main(String[] args) {
-   // runEcho();
-    getTokens();
+    //Run the menu repeatedly until the runMenu method returns 0, telling us to exit.
+    while(true) {
+      int menuOutput = runMenu();
+      if(menuOutput == 0) {
+        break;
+      }
+    }
+  }
+  
+  /**
+   * Runs a menu that lets the user select a feature of our program.
+   * Returns a 0 if the program should exit, returns a 1 otherwise.
+   */
+  public static int runMenu() {
+    System.out.println("Welcome to the menu:");
+    System.out.println("Choose 1 for echo program.");
+    System.out.println("Choose 2 for token program.");
+    
+    System.out.println("Choose 0 to exit.");
+    String userOption = sc.nextLine();
+    switch(userOption) {
+      case "1":
+        runEcho();
+        return 1;
+      case "2":
+        getTokens();
+        return 1;
+      case "0":
+        return 0;
+      default:
+        System.out.println("failed to recognize option");
+        return 1;
+    }
   }
   
   /**
@@ -33,7 +64,8 @@ public class Driver {
   }
   
   /**
-   * Less commonly used with System.in, your Scanner splits input into "tokens"
+   * Less commonly used with System.in, your Scanner splits input into "tokens".
+   * For your projects, use the nextLine() example unless you know what you're doing!
    */
   public static void getTokens() {
     System.out.println("Splitting input into tokens, STOP to stop:");
@@ -42,7 +74,7 @@ public class Driver {
       if(word.equals("STOP")) {
         break;
       } else {
-        System.out.println(sc.next()); //default setting is to get you a single word.
+        System.out.println(word); //default setting is to get you a single word.
       }
     }
   }
