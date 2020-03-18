@@ -102,7 +102,52 @@ a central repo on mvnrepository.com.  For any dependencies we include in our pro
 then downloads from the central repo to the local repo if necessary.  Any .jar files (packages, dependencies) in our local repo
 are available to our Maven projects.  We just need to add the <dependency>...</dependency> tag.
 
-few more topics: where is local maven repo, what is XML, what is a tag, and how to actually run maven commands...
+Your local maven repository is found in ~/.m2, or C:/Users/YourUsername/.m2
+If your maven project is not working, it can help to delete the .m2 folder and redownload dependencies.
+
+When we want to run the maven build lifecycle, we can use "Maven goals" in STS, or we can use the command line
+with commands like "mvn package".
+Regardless of how we execute build lifecycle steps, running a step always runs all prior steps.
+So if we run "mvn package", maven will validate, compile, test, and then package.
+If we run "mvn test", maven will validate, compile, then test.
+
+Run .jar files with the -jar flag on the command line.
+
+The pom.xml file is the first XML file that we've seen.  XML is very common for configuration files.
+XML stands for eXtensible Markup Language.  XML is structured with tags that come in pairs.  Each element in
+an XML file has an opening tag <tag> and a closing tag </tag> with some amount on content in between.
+
+Some XML elements in our POM:
+<project> ... </project> contains all other elements
+<dependencies> ... </dependencies> contains all dependencies
+<dependency> ... </dependency> contains information for a single dependency.
+
+One of Java's selling points is automatic memory management.  In some other languages
+you must manually allocate and deallocate memory.  The space for new Objects on the heap is automatically
+provided in Java.  This handles automatic allocation.
+Java also frees up memory automatically.  Objects that are on the heap and no longer being used
+have their memory freed up (deallocated) to be used for new objects.  This process is called garbage collection.
+
+When is an object elligible for garbage collection?  Objects can be garbage collected, or removed from the heap,
+once no more references to them exist.  You will never make use of a reference and discover the object has
+been removed.  objects ARE ONLY EVER REMOVED by the garbage collector when there are no more references.
+
+Does this happen in the JVM? yes, the JVM is responsible for garbage collection.  In addition, garbage collection
+occurs during your running program.  If you shut down the program, the stack and heap are totally removed.
+
+Whats the difference between stack and heap for GC? GC only affects the Heap. GC only deals with Objects.
+Memory on the stack is freed up as method calls pop off the stack.
+
+If we never get rid of all of the references to any of our objects (all objects maintain at least one reference),
+Then garbage collection will never be able to clean up the Heap.  If we create too many objects and the garbage collector
+can't clean them up, we'll get a java.lang.OutOfMemoryError.  Most often OutOfMemoryErrors are caused by *memory leaks*,
+where we accidentally maintain references to unused objects.  Short version: we care about GC because we want to avoid memory leaks.
+
+The Garbage Collector is highly optimized and runs on its own.  We can suggest that it run with System.gc(), 
+but there's no guarantee that it will.
+
+Every Object in Java has a finalize() method that the garbage collector should call while it destroys the object.
+In fact, finalize is not always called, we shouldn't rely on it being called, and its use is discouraged.
 
 
 
