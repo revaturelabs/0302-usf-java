@@ -47,6 +47,18 @@ public class Driver {
         Driver.loggedIn = true;
       }
     }
+    if(!Driver.loggedIn) {
+      System.out.println("Failed to log in with your username and password.");
+    }
+  }
+  
+  /**
+   * Runs the welcome menu that provides only 3 options: login, create account, and exit.
+   * 
+   * @return 0 if the program should exit, 1 otherwise
+   */
+  public static int runWelcomeMenu() {
+    //TODO write this!
   }
   
   /**
