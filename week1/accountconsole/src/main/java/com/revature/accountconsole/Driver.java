@@ -15,6 +15,11 @@ public class Driver {
    * All user accounts created.  We don't have file or DB storage just yet.
    */
   private static Set<Account> accounts = new HashSet<Account>();
+  
+  /**
+   * Whether the user is currently logged in
+   */
+  private static boolean loggedIn = false;
 
   public static void main(String[] args) {
     //Run the menu repeatedly until the runMenu method returns 0, telling us to exit.
@@ -22,6 +27,24 @@ public class Driver {
       int menuOutput = runMenu();
       if(menuOutput == 0) {
         break;
+      }
+    }
+  }
+  
+  /**
+   * Runs the login screen
+   */
+  public static void runLogin() {
+    System.out.println("Please log in.  Provide username:");
+    String usernameInput = sc.nextLine();
+    System.out.println("Provide password:");
+    String passwordInput = sc.nextLine();
+    //At this point we have the username and password the user is trying to log in with.
+    for(Account a : Driver.accounts) {
+      //we could get the username and password and check if they're equal for each account
+      //I'd rather put the method on the Account class to authenticate.
+      if(a.authenticate(usernameInput, passwordInput)) {
+        Driver.loggedIn = true;
       }
     }
   }
@@ -58,6 +81,9 @@ public class Driver {
         return 1;
       case "0":
         return 0;
+      case "debuglogin":
+        runLogin();
+        return 1;
       default:
         System.out.println("failed to recognize option");
         return 1;

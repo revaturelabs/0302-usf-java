@@ -20,11 +20,22 @@ public class Account {
     this.setPassword(password);
     this.setName(name);
   }
+  
+  /**
+   * Returns true if the username and password input matches the username and password for this account
+   * Returns false otherwise.
+   * @param username
+   * @param password
+   * @return
+   */
+  public boolean authenticate(String username, String password) {
+    return this.username.equals(username) && this.password.equals(password);
+  }
 
   public String getUsername() {
     return username;
   }
-
+    
   /**
    * Attempts to set the username on this Account.
    * 
