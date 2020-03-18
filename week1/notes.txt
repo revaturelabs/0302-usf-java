@@ -78,7 +78,31 @@ so these are unchecked exceptions -- the compiler doesn't know where they might 
 
 
 
+Wednesday:
 
+More Maven: Maven is a build automation and dependency management tool.
+Builds in Maven are automated and split into a series of steps called the Maven build lifecycle.
+We'll use the default maven build lifecycle, but know that it is customizable.
+It can produce test reports, build your project as a "docker image" (don't worry about what this means just yet),
+run multiple testing steps, build for multiple environments, ... plugins enable almost any build functionality you need.
+The default build lifecycle is 7 steps.  We should focus on the first 4:
+1: validate -- checks the POM and the project directory to ensure Maven project is valid and can be built
+2: compile -- compiles your .java code into bytecode to be run.
+3: test -- runs any JUnit tests in src/test/java.  This will provide a printout with successes/failures on the console.
+4: package -- takes all of your compiled java files and places them in a single archive file, most commonly a .jar file.
+	.jar files are java archives and they provide an easy way to share, move, deploy your completed java project.
+	We call files like .jar files produced from a build "artifacts".
+5: verify -- ensure package was produced correctly
+6: install -- add package to local maven repository
+7: deploy -- add package to central maven repository
+All of the dependencies we get using Maven were built using this lifecycle and it's the deploy step that makes them available to us.
+
+Maven repository: a location that Maven uses to store packaged dependencies.  There is a local repo on our machine, and 
+a central repo on mvnrepository.com.  For any dependencies we include in our projects, maven first checks the local repo,
+then downloads from the central repo to the local repo if necessary.  Any .jar files (packages, dependencies) in our local repo
+are available to our Maven projects.  We just need to add the <dependency>...</dependency> tag.
+
+few more topics: where is local maven repo, what is XML, what is a tag, and how to actually run maven commands...
 
 
 

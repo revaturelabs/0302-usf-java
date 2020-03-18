@@ -66,7 +66,25 @@ public class Driver {
    * @return 0 if the program should exit, 1 otherwise
    */
   public static int runWelcomeMenu() {
-    //TODO write this!
+    System.out.println("Welcome Menu");
+    System.out.println("Choose 1 to log in");
+    System.out.println("Choose 2 to create an account");
+    System.out.println("Choose 0 to exit");
+    String welcomeOption = sc.nextLine();
+    switch(welcomeOption) {
+      case "1":
+        runLogin();
+        return 1;
+      case "2":
+        createAccount();
+        return 1;
+      case "0":
+        return 0;
+      default:
+        System.out.println("That is not a valid option,");
+        System.out.println("Please try again.");
+        return 1;
+    }
   }
   
   /**
