@@ -22,8 +22,16 @@ public class Driver {
   private static boolean loggedIn = false;
 
   public static void main(String[] args) {
-    //Run the menu repeatedly until the runMenu method returns 0, telling us to exit.
-    while(true) {
+    
+    //while the user is not logged in, loop welcome menu:
+    while(!Driver.loggedIn) {
+      int welcomeMenuOutput = runWelcomeMenu();
+      if(welcomeMenuOutput == 0) {
+        System.exit(0);
+      }
+    }
+    //Run the menu repeatedly while logged in, until the runMenu method returns 0, telling us to exit.
+    while(Driver.loggedIn) {
       int menuOutput = runMenu();
       if(menuOutput == 0) {
         break;
