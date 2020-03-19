@@ -206,6 +206,12 @@ To create a new Thread and run it, we'll follow these steps:
 3. in your Java program, create a new Thread(Runnable runnable) and pass in an instance of the class created in (1).
 4. Finally, call the start() method on the Thread created in (3).
  
+Another way to create a new thread is to extend the Thread class and override its run() method.  run() is still
+going to be the method on the bottom of the stack, but the process is slightly different.
+1. create a class that extends Thread
+2. implement the run() method on this class.
+3. in your Java program, create a new instance of the class created in (1).
+4. Finally, call the start() method on the object created in (3).
  
  
  
