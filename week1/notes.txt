@@ -171,7 +171,49 @@ In Java, HashSet's implementation actually just uses HashMap under the hood.  Tr
 
 
 Threads: A thread is a single flow of program execution. Thus far, we've been writing single-threaded programs,
- and we've only had one flow of execution.
+ and we've only had one flow of execution.  The flow of execution in Java happens via the stack.  So, when we write
+ multi-threaded Java programs, we'll have multiple flows of execution, so we'll have multiple stacks.
+ 
+ When we have multiple threads, our program can execute more than one statement at the same time.  Multithreaded programs
+ can multitask, they can do 2 or 3 or 4 or many different things at the same time.  Each thread gets its own flow of execution,
+ so each thread can execute one statement at a time.
+ 
+The stack that we're familiar with, that the JVM starts by calling main(), works the same as it always has.
+Other threads that we start up in our program will have a run() method instead of a main() method at the bottom of their stacks.
+We will write the run() method for each Thread to specify that thread's functionality.  run() is like main() for all other threads.
+
+Regardless of how many threads we have, there is always only one Heap.  All threads share the Heap.
+
+Is there a limit on the number of stacks we can have? Yes, but it's very high.  You can change that limit by modifying arguments
+to the JVM, but realistically we'll never hit the limit.  We could have 1000 stacks no problem.
+
+How do we create multiple Stacks? Every Thread we create will automatically get its own stack.  When that Thread is done running, its
+stack will automatically disappear.
+
+Is this asynchronous programming? Yes.  All asynchronous programming involves multiple threads.
+
+1000 Threads in Java doesn't necessarily mean that 1000 Threads are executing at the same time.  Threads can wait to obtain
+the processing power they need execute.  Default behaviour for many Threads is to execute round-robin style.  Thread 1 runs a statement,
+then Thread 2, then Thread 3, then ...
+
+Multithreading enables "parallel processing" where your computer/program does more than one thing at the same time, but
+this is limited by your hardware.
+
+There are multiple ways of creating new threads in Java.  We'll start with the best (most preferred) way.
+To create a new Thread and run it, we'll follow these steps:
+1. create a class that implements the Runnable interface
+2. implement the run() method on this class.  The run() method specifies what you want your thread to do.
+3. in your Java program, create a new Thread(Runnable runnable) and pass in an instance of the class created in (1).
+4. Finally, call the start() method on the Thread created in (3).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
