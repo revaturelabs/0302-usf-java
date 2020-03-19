@@ -75,6 +75,12 @@ public class Driver {
     
     System.out.println(Arrays.toString(words));
     
+    //Now that we have an array of words, what do we do next? We need to count each word.
+    //starting with a loop is a good idea:
+    for(int i=0; i<words.length; i++) {
+      
+    }
+    
     
     return wordCounts;
   }
