@@ -9,8 +9,8 @@ public class Driver {
   
   public static void main(String[] args) {
     //dictionaryDemo();
-    wordCount("the quick brown fox jumped over the lazy dog");
-    wordCount("the the red blue red");
+    System.out.println(wordCount("the quick brown fox jumped over the lazy dog"));
+    System.out.println(wordCount("the the red blue red"));
   }
 
   public static void dictionaryDemo() {
@@ -78,7 +78,16 @@ public class Driver {
     //Now that we have an array of words, what do we do next? We need to count each word.
     //starting with a loop is a good idea:
     for(int i=0; i<words.length; i++) {
+      String word = words[i];
+      //We want to add one to the count for word, and create the entry for word if it doesn't exist.
       
+      //lets first create the entry for our word if it doesn't yet exist:
+      if(!wordCounts.containsKey(word)) { //if wordCounts does not contain word
+        wordCounts.put(word, 0);
+      }
+      
+      //then we add one to the count for that word
+      wordCounts.put(word, wordCounts.get(word) + 1); //another option: wordCounts.get(word)++
     }
     
     
