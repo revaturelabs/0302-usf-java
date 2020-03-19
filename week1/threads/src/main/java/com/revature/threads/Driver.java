@@ -3,7 +3,11 @@ package com.revature.threads;
 public class Driver {
   
   public static void main(String[] args) {
+    //basicThreadDemo();
     
+  }
+  
+  public static void basicThreadDemo() {
     Thread myFirstThread = new Thread(new PrintOneToTen());
     //seems sensible but compilation error: new Thread(PrintOneToTen.class)
     myFirstThread.start();
