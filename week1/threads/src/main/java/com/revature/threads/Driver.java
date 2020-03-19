@@ -4,10 +4,15 @@ public class Driver {
   
   public static void main(String[] args) {
     //basicThreadDemo();
-    
+    expensiveDemo();
   }
   
-  
+  public static void expensiveDemo() {
+    ExpensiveComputingObject eco = new ExpensiveComputingObject();
+    System.out.println("ECO value: " + eco.getValue());
+    eco.expensiveAddFifty();
+    System.out.println("ECO value: " + eco.getValue());
+  }
   
   public static void basicThreadDemo() {
     Thread myFirstThread = new Thread(new PrintOneToTen());
