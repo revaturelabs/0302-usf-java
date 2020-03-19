@@ -87,15 +87,38 @@ public class Driver {
       }
       
       //then we add one to the count for that word
-      wordCounts.put(word, wordCounts.get(word) + 1); //another option: wordCounts.get(word)++
+      //wordCounts.put(word, wordCounts.get(word) + 1); //increment by one
+      
+      //longform of the above: does the same as line 90.
+      Integer oldCount = wordCounts.get(word); // the count of word before this iteration of the loop.
+      Integer newCount = oldCount + 1; //add one to oldCount because we see the word in this iteration of the loop
+      wordCounts.put(word, newCount);
+      
+      System.out.println(wordCounts);
     }
-    
     
     return wordCounts;
   }
 
-  
-  
+  /**
+   * Returns a count of each letter appearing in the input text as a map. Ignores spaces.
+   * 
+   * Example: letterCount("the the red blue red") will return
+   * {t=2,h=2,e=5,r=2,d=2,b=1,l=1,u=1}
+   * @param text
+   * @return
+   */
+  public static Map<String, Integer> letterCount(String text) {
+    Map<String, Integer> letterCounts = new HashMap<String, Integer>();
+    
+    String[] letters = text.split("");
+    
+    
+    
+    
+    
+    return letterCounts;
+  }
   
   
   
