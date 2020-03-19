@@ -170,6 +170,8 @@ In Java, HashSet's implementation actually just uses HashMap under the hood.  Tr
  we know about HashSet and TreeSet apply to the keys of HashMap and TreeMap.
 
 
+Threads: A thread is a single flow of program execution. Thus far, we've been writing single-threaded programs,
+ and we've only had one flow of execution.
 
 
 
