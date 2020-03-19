@@ -10,7 +10,30 @@ public class Driver {
   public static void expensiveDemo() {
     ExpensiveComputingObject eco = new ExpensiveComputingObject();
     System.out.println("ECO value: " + eco.getValue());
-    eco.expensiveAddFifty();
+
+    //Create the runnable and pass it the object we want to use for computing.
+    ExpensiveComputeRunnable ecr = new ExpensiveComputeRunnable(eco);
+    Thread t1 = new Thread(ecr);
+    t1.start();
+    
+    System.out.println("Expensive computation is now running in the background.");
+    System.out.println("we're free to do other work in the main thread");
+    System.out.println("If we want to wait for the computation to be done, we can use Thread.join()");
+    
+    System.out.println("We can start the expensive computation again with another thread, if we want to run it twice.");
+    Thread t2 =  new Thread(ecr);
+    t2.start();
+    
+    //Wait for both threads to complete:
+    try {
+      t1.join();
+      t2.join();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    
+   
+    
     System.out.println("ECO value: " + eco.getValue());
   }
   

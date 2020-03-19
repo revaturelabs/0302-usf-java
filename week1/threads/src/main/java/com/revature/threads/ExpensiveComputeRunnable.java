@@ -15,7 +15,7 @@ public class ExpensiveComputeRunnable implements Runnable {
   }
 
   public void run() {
-    
+    eco.expensiveAddFifty();
   }
 
 }
