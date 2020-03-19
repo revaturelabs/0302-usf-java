@@ -21,5 +21,9 @@ public class Driver {
     // you'll need to create a new Class
     Thread mySecondThread = new Thread(new PrintAOneHundredTimes());
     mySecondThread.start();
+    
+    //using the method of extending Thread:
+    Thread myThirdThread = new PrintOddNumbersOneToNineteenThread();
+    myThirdThread.start();
   }
 }
