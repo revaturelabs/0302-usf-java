@@ -213,7 +213,11 @@ going to be the method on the bottom of the stack, but the process is slightly d
 3. in your Java program, create a new instance of the class created in (1).
 4. Finally, call the start() method on the object created in (3).
  
- 
+
+A common usecase for multithreading is having some expensive (in time)computation and you'd like
+to do it in the background.  This lets your regular program flow continue normally.
+
+
  
  
  
