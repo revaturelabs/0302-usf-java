@@ -150,5 +150,28 @@ Every Object in Java has a finalize() method that the garbage collector should c
 In fact, finalize is not always called, we shouldn't rely on it being called, and its use is discouraged.
 
 
+Thursday:
+
+Maps: A Map is a data structure that contains key, value pairs.  A map is like a dictionary.  The words in a dictionary are like
+ keys in the Map.  The definitions in a dictionary are like values.  In a dictionary we look up definitions by their words,
+ and in a Map we look up values using their keys.  We often say a value is "stored under" a key in a Map.
+ 
+If we were creating a dictionary in Java, we'd use a map that had Strings for both key and value.  Maps in Java aren't
+ restricted to using String keys, but Strings are common.
+ 
+Map is an interface in Java, that is considered part of the Collections Framework even though it does not implement Collection.
+ It's still considered part of the framework because we can retrieve both the keys and the values of a Map as Collections.
+
+HashMap is the default concrete class that implements Map.  All maps have methods to retrieve values using keys, to
+ store values under keys, and to retrieve Collections of their keys and/or values.
+
+In Java, HashSet's implementation actually just uses HashMap under the hood.  TreeSet's implementation uses TreeMap under the hood.
+ HashSets are HashMaps where the values don't matter, and TreeSets are TreeMaps where the values don't matter.  Everything
+ we know about HashSet and TreeSet apply to the keys of HashMap and TreeMap.
+
+
+
+
+
 
 
