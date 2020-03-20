@@ -248,7 +248,21 @@ Know that there can be many different multithreading problems, and if you find y
 seek the guidance of a senior engineer.  It's harder to tell when multithreaded code is written poorly, so
 experience is a great help.
 
-Deadlock: deadlock will bring one or more threads, 
+Deadlock: deadlock will bring two or more threads, possibly your entire program, to a screeching halt.
+Any threads involved in a deadlock will never process any more statements (they'll never do anything else)
+without outside intervention.  Its best to avoid deadlock in the first place.
+Deadlock is a problem that only appears when you are using locks.  So it's a problem than can show up after
+we use the synchronized keyword to avoid race conditions.
+
+Deadlock is a situations in which two or more threads are both holding and requesting locks for two or more objects.
+Example:
+Thread A needs Object 1 and Object 2.
+Thread B needs Object 1 and Object 2.
+Thread A has the lock for Object 1 and requests the lock for Object 2.
+Thread B has the lock for Object 2 and requests the lock for Object 1.
+Since Thread A needs Object 2, it will wait until Thread B releases the lock on Object 2.
+Since Thread B needs Object 1, it will wait until Thread A releases the lock on Object 1.
+Both threads wait forever for the other to complete -- deadlock!
 
 
 
