@@ -231,11 +231,24 @@ Use of the synchronized keyword means that even if I have 4 threads, only 1 will
 any time, the others will be waiting.  A series of computations that must proceed in order like this are called
 "serial", and this is serial processing.
 
-
 Using monitor locks (and other kinds of locks, in the future), to solve your multithreading problems is
 a good thing to do.  If we don't make use of them, we end up with "race conditions" where the functionality
 of our program depends on how quickly each thread runs.  This makes our programs "nondeterministic", meaning
-we can't say for certain what they will do in any given run.
+we can't say for certain what they will do in any given run.  Race conditions can be hard to spot and can
+have severe effects long after they are added to the codebase.  We should be careful to synchronize any
+part of our codes functionality that might cause race conditions.  A good rule of thumb is to synchronize
+any methods our threads will use that modify a value on an object.
+
+
+Problems with locks:
+In general, the problems with using the synchronized keyword are worth the benefits, but this may change.
+First, using locks makes processing serial, which can be much slower than parallel processing.
+Second, using locks can cause new multithreading problems.  We'll look at deadlock, but there are more.
+Know that there can be many different multithreading problems, and if you find yourself writing multithreaded code,
+seek the guidance of a senior engineer.  It's harder to tell when multithreaded code is written poorly, so
+experience is a great help.
+
+Deadlock: deadlock will bring one or more threads, 
 
 
 
