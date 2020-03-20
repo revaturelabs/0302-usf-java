@@ -12,6 +12,7 @@ public class Driver {
     //The first thread in basicThreadDemo() printed numbers one through ten.
     // we needed to create a class, and type a lot of boilerplate code.
     // lambda expressions will save us time and make our code clearer:
+    //Thread myFirstThread = new Thread(new PrintOneToTen());
     Thread myFirstThread = new Thread(()->{
       //Inside of the curly braces we specify the body of the abstract method run()
       for(int i=1; i<11; i++) {
@@ -20,6 +21,15 @@ public class Driver {
     });
     myFirstThread.start();
     
+    //Create and run a thread that prints out "lambdas are neat"
+    Thread myLambdasAreNeatThread = new Thread(()-> {
+      System.out.println("Lambdas are neat");
+    });
+    myLambdasAreNeatThread.start();
+    
+    //Create and run a thread that prints "hello", then "hellohello", then "hellohellohello", ... 
+    // up to 10 repeated hellos
+    //Use a lambda expression -- it will be faster
   }
   
   public static void expensiveDemo() {
