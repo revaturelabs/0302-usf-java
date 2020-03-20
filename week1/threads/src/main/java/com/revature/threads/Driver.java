@@ -4,7 +4,22 @@ public class Driver {
   
   public static void main(String[] args) {
     //basicThreadDemo();
-    expensiveDemo();
+    //expensiveDemo();
+    lambdaThreadDemo();
+  }
+  
+  public static void lambdaThreadDemo() {
+    //The first thread in basicThreadDemo() printed numbers one through ten.
+    // we needed to create a class, and type a lot of boilerplate code.
+    // lambda expressions will save us time and make our code clearer:
+    Thread myFirstThread = new Thread(()->{
+      //Inside of the curly braces we specify the body of the abstract method run()
+      for(int i=1; i<11; i++) {
+        System.out.println(i);
+      }
+    });
+    myFirstThread.start();
+    
   }
   
   public static void expensiveDemo() {
