@@ -15,8 +15,13 @@ public class ExpensiveComputingObject {
   
   /**
    * Adds 50 to the field value, incrementing by 1 50 times and waiting 200ms between each addition.
+   * In Java, we can add the Synchronized keyword to methods, and then those methods will use a monitor lock,
+   * meaning no two threads will be able to call the method at the same time.
+   * 
+   * adding the synchronized keyword here means that only one thread can be running expensiveAddFifty() at any given time.
+   * you can also add synchronized blocks where you lock objects: synchronized (this) { ... }
    */
-  public void expensiveAddFifty() {
+  public synchronized void expensiveAddFifty() {
     for(int i=0; i<50; i++) {
       Integer oldValue = getValue();
       //Here is the "expensive" part: adding 1 will take 200 milliseconds
