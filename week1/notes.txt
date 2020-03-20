@@ -287,6 +287,21 @@ Reflections API: See JavaDoc linked in training-materials.
 	like accessing private fields on a class from outside that class.
 -Many tools that use annotations make use of Reflections.
 
+Design patterns: language-agnostic general solution to common problems in software development.
+2 to focus on:
+Singleton : an object that there can only be one instance of.  This is useful if you need a single object
+  to control access to an external resource, and in other situations.
+Data Access Object : DAO, an object that is responsible for accessing an external data source.  We implement our
+  DAOs by writing a DAO interface with abstract methods for Object retrieval, then we write concrete implementations
+  for that DAO interface.  Typically we'll have one DAO per Object, but not necessarily.
+  This is useful to collect all data access logic in one place, and to let us switch out the underlying persistence
+  mechanism (it lets us change from writing to file to using a database relatively seamlessly).
+There are many other Design Patterns, OOP has been highly influenced by "Design Patterns: Elements of Reusable Object-Oriented Software"
+  a book by "The Gang of Four"
+  
+We can create a Singleton in Java by making the constructor private and allowing access to an instance of the class
+  using a static method.
+
 
 
 
