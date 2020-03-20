@@ -280,6 +280,13 @@ Lambda expressions specify parameters and body of a "function" in following form
 We use Lambdas in place of functional interfaces anywhere in our code.  The "function" specified by the Lambda expression
 is used to provide functionality for the abstract method on the functional interface.
 
+Reflections API: See JavaDoc linked in training-materials.
+-Reflections allows us to examine and modify a program as it is running.
+-JUnit uses Reflections to call the methods we annotate with @Test.
+-Reflections is powerful, allowing you to achieve things that can't be done without Reflections,
+	like accessing private fields on a class from outside that class.
+-Many tools that use annotations make use of Reflections.
+
 
 
 
