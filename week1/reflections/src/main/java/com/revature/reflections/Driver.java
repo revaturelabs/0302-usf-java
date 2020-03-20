@@ -32,7 +32,7 @@ public class Driver {
       if(inspectClassMethods[i].getParameterCount() == 2) {
         //invoke takes the object that should call the method as its first argument
         // and all arguments to the method itself come afterwards.
-        inspectClassMethods[i].invoke(dynamicReflectionObject, 1,14324);
+        inspectClassMethods[i].invoke(dynamicReflectionObject, 2,2);
       }
     }
   }

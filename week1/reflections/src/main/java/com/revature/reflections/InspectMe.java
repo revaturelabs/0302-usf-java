@@ -19,6 +19,7 @@ public class InspectMe {
   
   public int secondMethod(int i, int j) {
     System.out.println("Inside of two parameter method");
+    System.out.println("i + j = " + (i+j));
     return 0;
   }
   
