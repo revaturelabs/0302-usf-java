@@ -30,6 +30,16 @@ public class Driver {
     //Create and run a thread that prints "hello", then "hellohello", then "hellohellohello", ... 
     // up to 10 repeated hellos
     //Use a lambda expression -- it will be faster
+    Thread myHelloPyramidPrint = new Thread(
+        ()->{
+          String myString = "hello";
+          for(int i=0; i<10; i++) {
+            System.out.println(myString);
+            myString = myString + "hello";
+          }
+        }
+        );
+    myHelloPyramidPrint.start();
   }
   
   public static void expensiveDemo() {
