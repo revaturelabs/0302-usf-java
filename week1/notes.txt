@@ -265,6 +265,22 @@ Since Thread B needs Object 1, it will wait until Thread A releases the lock on 
 Both threads wait forever for the other to complete -- deadlock!
 
 
+Lambda expressions: a new feature in Java 8 that emulates functional programming. Java is an OOP language,
+and under the hood Lambda expressions (or just Lambdas) make use of familiar Java tools (Interfaces, classes, methods).
+Lambda expressions allow us to quickly define a single "function" without creating a class that contains it.
+This is useful for anyone who prefers code in a functional style, and it's useful even if we like our OOP
+to quickly define the functionality of a Runnable or a Comparator.
+
+We can use Lambdas with "Functional Interfaces", which are just interfaces with a single abstract method.
+ANY interface with a single abstract method is a functional interface and can be used with lambda expressions.
+
+Lambda expressions specify parameters and body of a "function" in following format:
+(int param1, String param2)->{method body}
+
+We use Lambdas in place of functional interfaces anywhere in our code.  The "function" specified by the Lambda expression
+is used to provide functionality for the abstract method on the functional interface.
+
+
 
 
 
