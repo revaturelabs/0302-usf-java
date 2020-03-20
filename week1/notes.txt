@@ -235,7 +235,9 @@ any time, the others will be waiting.  A series of computations that must procee
 Using monitor locks (and other kinds of locks, in the future), to solve your multithreading problems is
 a good thing to do.  If we don't make use of them, we end up with "race conditions" where the functionality
 of our program depends on how quickly each thread runs.  This makes our programs "nondeterministic", meaning
-we can't say for certain what they will in any given run.
+we can't say for certain what they will do in any given run.
+
+
 
 
 
