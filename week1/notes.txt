@@ -218,12 +218,28 @@ A common usecase for multithreading is having some expensive (in time)computatio
 to do it in the background.  This lets your regular program flow continue normally.
 
 
- 
- 
- 
- 
- 
- 
+Friday:
+
+The synchronized keyword enables a monitor lock, that prevents more than one thread from running a method or
+accessing an object at the same time.
+
+Marking methods as synchronized means that we can't take advantage of the speed of multithreading with those methods.
+If I have an expensive computation that isn't synchronized and I have 4 different threads run it, the computations will
+complete 4 times faster.  We call this parallel processing.
+
+Use of the synchronized keyword means that even if I have 4 threads, only 1 will be able to do the computation at
+any time, the others will be waiting.  A series of computations that must proceed in order like this are called
+"serial", and this is serial processing.
+
+
+Using monitor locks (and other kinds of locks, in the future), to solve your multithreading problems is
+a good thing to do.  If we don't make use of them, we end up with "race conditions" where the functionality
+of our program depends on how quickly each thread runs.  This makes our programs "nondeterministic", meaning
+we can't say for certain what they will in any given run.
+
+
+
+
 
 
 
