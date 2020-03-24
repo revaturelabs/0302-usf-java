@@ -1,36 +1,30 @@
-# Bank
+# Banking Project
 
-## Description
+## Presentations (Monday ~ Wednesday of Week 3)
+* Presentations will start when QC team joins.
 
-   The Bank app is a console-based application that simulates banking operations. A customer can apply for an account, view their balance, and make withdrawals and deposits. An employee can aprove or deny accounts and view account balances for their customers.
-	
-## Purpose
-
-   We want to see that you can meet deadlines and that you can code. You are expected to complete the following requirements and give a 5 minute presentation of your project to our QC team.
+## Create a bank that users can interact with
+* As a user I can login and logout.
+* As a user I can view my balance.
+* As a user I can withdraw money.
+* As a user I can deposit money.
+* As a user I can register.
+* Optional: As a user I can view all my transactions.
+* Optional: As a user I can transfer money from my account to another account.
 
 ## Requirements
-1. Functionality should reflect the below user stories.
-2. Data is stored in a database.
-3. A custom stored procedure is called to perform some portion of the functionality.
-4. Data Access is performed through the use of JDBC in a data layer consisting of Data Access Objects.
-5. All input is received using the java.util.Scanner class.
-6. Log4j is implemented to log events to a file.
-7. A minimum of one (1) JUnit test is written to test some functionality.
+* Data is persisted (saved) to an Postgres database with JDBC.
+    * While you don't know these technologies, use interface driven development and
+    start with a concrete implementation that return static data (a List with something for example) or use Serialization and persist data to a text file.
+    * Once you learn JDBC and basics of SQL, you can create a new concrete implementation from that interface that you created and proceed to develop the actual data access code.
+* Make at least 2 JUnit test cases.
+    * Remember: a test case should involve more than one Test involving the same 
+    functionality, example: Authentication test case - Tests: Successful Login, Failed Login.
+* Use Log4j for error tracking and tracing.
+* Create at least 2 custom exceptions.
+* Input/Output through the console.
 
-
-## User Stories
-
-* As a user, I can login.
-* As a customer, I can apply for a new bank account with a starting balance.
-* As a customer, I can view the balance of a specific account.
-* As a customer, I can make a withdrawal or deposit to a specific account.
-* As the system, I reject invalid transactions.
-	* Ex:
-		* A withdrawal that would result in a negative balance.
-		* A deposit or withdrawal of negative money.
-* As an employee, I can approve or reject an account.
-* As an employee, I can view a customer's bank accounts.
-* As a user, I can register for a customer account.
-* As a customer, I can post a money transfer to another account.
-* As a customer, I can accept a money transfer from another account.
-* A an employee, I can view a log of all transactions.
+## Reminder
+* Stick to the requirements, don't go overboard with extra features and if you do have extra features, make sure the main requirements are met.
+* It is *not* mandatory to follow the package structure provided in this project, however, I totally recommend you to try to follow it because this is the way that you develop following the *single responsibility principle*, and the way that we are going to code for the rest of the training.
+   * If it becomes to hard for you to follow a modular approach for this project, use your own.
