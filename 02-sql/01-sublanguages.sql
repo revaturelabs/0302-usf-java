@@ -113,6 +113,13 @@ select test_name as funky_name from testing;
 --alter
 --alter table [table] [alteration]
 alter table testing add column new_col float;
+alter table testing drop column new_col;
 
+--truncate will empty the table
+truncate table testing;
+select * from testing;
 
+--drop will get rid of the entire table
+drop table testing;
+select * from testing;
 
