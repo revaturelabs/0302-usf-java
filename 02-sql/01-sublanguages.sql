@@ -37,8 +37,11 @@
  *			KEYWORDS: INSERT, SELECT, UPDATE, DELETE
  * 		DDL=DATA DEFINITION LANGUAGE
  * 			KEYWORDS: CREATE, ALTER, DROP, TRUNCATE
- * 
- * 
+ * 		DQL=DATA QUERY LANGUAGE
+ * 			KEYWORD: SELECT
+ * 		TCL=TRANSACTION CONTROL LANGUAGE
+ * 			KEYWORDS: COMMIT, ROLLBACK, SAVEPOINT, BEGIN, RELEASE
+ * 			DML IS THE ONLY SUBLANGUAGE YOU CAN USE TRANSACTIONS WITH
  * 
 */
 
@@ -122,4 +125,29 @@ select * from testing;
 --drop will get rid of the entire table
 drop table testing;
 select * from testing;
+
+------------------------------------------------------------------
+
+--tcl
+
+begin;
+	insert into testing values (1,'fghuer','sjfh','sugghj',false);
+rollback;
+commit;
+
+delete from testing where id=1;
+
+begin;
+	insert into testing values (3,'odfng','sgreg','ger',true);
+	savepoint first_save;
+	delete from testing where id=1;
+	release savepoint first_save;
+	rollback to savepoint first_save;
+commit;
+
+select * from testing;
+
+
+
+
 
