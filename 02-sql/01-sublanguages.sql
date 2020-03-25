@@ -152,4 +152,40 @@ select * from testing;
 
 
 
+select * from testing order by id;
+
+begin;
+	select * from testing order by id;
+	delete from testing where test=false;
+	select * from testing order by id;
+savepoint first_save;
+	select * from testing order by id;
+	insert into testing values (5,'fdhdh','ddsgdgf','hghtwe',true);
+	select * from testing order by id;
+	update testing set test=false where id<5;
+	select * from testing order by id;
+--release savepoint first_save;
+rollback to savepoint first_save;
+	select * from testing order by id;
+commit;
+select * from testing order by id;
+rollback;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
