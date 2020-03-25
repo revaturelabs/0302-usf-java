@@ -71,22 +71,3 @@ delete from address where address_id = 101;
 
 insert into address values (2,2,'elms');
 delete from customer where id=2;
-
-insert into address values (3, 4, 'main st 1123 77565 califorina sanjose,');
-
-create table new_address (
-	id integer primary key,
-	house_number integer,
-	street_name text,
-	unit_number integer,
-	city text,
-	state text,
-	zipcode integer,
-	country text
-);
-
-insert into new_address values (1, 123, 'bruce b downs blvd', 300, 'Tampa','FL',33617, 'US');
-select * from new_address;
-select count(*) from new_address where state = 'FL';
-
-
