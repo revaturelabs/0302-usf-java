@@ -88,3 +88,5 @@ create table new_address (
 insert into new_address values (1, 123, 'bruce b downs blvd', 300, 'Tampa','FL',33617, 'US');
 select * from new_address;
 select count(*) from new_address where state = 'FL';
+
+
