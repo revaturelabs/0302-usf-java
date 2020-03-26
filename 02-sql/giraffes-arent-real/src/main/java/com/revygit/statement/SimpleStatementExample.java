@@ -10,6 +10,14 @@ import java.util.List;
 import com.revygit.connection.ConnectionUtil;
 import com.revygit.model.Giraffe;
 
+/**
+ * 
+ * @author Revature
+ *
+ *	simple statements will take everything put in and send it to sql for it
+ *		to take care of. this does not prevent sql injection.
+ *
+ */
 public class SimpleStatementExample {
 
 	public List<Giraffe> getAllGiraffes(){
@@ -28,5 +36,18 @@ public class SimpleStatementExample {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public int updateRecord(Giraffe g) {
+		try(Connection conn = ConnectionUtil.connect()){
+			Statement s = conn.createStatement();
+			String sql = "update giraffes set name = '"+g.getName()+"' where id = "+g.getId();
+			int updated = s.executeUpdate(sql);
+			s.close();
+			return updated;
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 }

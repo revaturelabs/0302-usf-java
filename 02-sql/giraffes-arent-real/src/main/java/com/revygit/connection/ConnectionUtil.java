@@ -23,6 +23,8 @@ import static com.revygit.config.PlainTextConfig.*;
  *			interfaces in the api.
  *			interfaces:
  *				Connection
+ *				Statement
+ *				ResultSet
  *			class:
  *				DriverManager
  */
