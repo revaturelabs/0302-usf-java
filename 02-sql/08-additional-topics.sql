@@ -46,8 +46,39 @@ set search_path to public;
 --query a table in another schema, not in the search path
 select * from training.customer;
 
+--index
+-- an index helps psql make queries and other operations more efficient it
+----does however, create overhead for the db since it needs to update the
+----index anytime something is updated.
+create index album_index on "Album"("AlbumId");
+select * from "Album";
 
 
+----------------------table inheritance---------------------
+create table papa(
+	id integer primary key,
+	name text
+);
+
+create table child(
+	defects boolean
+) inherits (papa);
+
+--will query everything that is papa
+insert into papa values (1,'paul'),(2,'that guy'), (3,'hairy');
+select * from papa;
+
+--will query everything that is a child
+--	will not return any of papa table that isnt at the children table
+insert into child values (90,'jerry', true),(91,'that kid', true),(92,'louis capaldi', false);
+select * from child;
+
+--will only query the papa table
+select * from only papa;
+
+--multiple inheritance
+create table strange_user() inherits (papa,"Album");
+select * from strange_user;
 
 
 
