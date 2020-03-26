@@ -2,7 +2,7 @@
 -----sql joins
 --we have a few different kinds of joins
 ----inner join, outer join->left outer, right outer, full outer
-----we also have self join and cross join
+----we also have self join and cross, or cartesian, join
 
 select * from "Album";
 select * from "Artist";

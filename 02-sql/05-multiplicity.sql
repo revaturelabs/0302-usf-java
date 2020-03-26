@@ -31,7 +31,7 @@
  * 		m-1
  * 			put a foreign key in the many table
  * 		m-m
- * 			create a junctin table with a composite key that points to both tables
+ * 			create a junction table with a composite key that points to both tables
  * 
  * 
  */
@@ -93,7 +93,7 @@ create table cars (
 
 /*
  * when we have one record pointing to another, we have a parent-child relationship.
- * 	this is where the chilid points to the parent. if we want to delete the child,
+ * 	this is where the child points to the parent. if we want to delete the child,
  * 	we are fine. if we want to delete the parent though, we get an error because
  * 	of referential integrity. so if we want to get rid of the parent, we must first
  * 	get rid of the child.

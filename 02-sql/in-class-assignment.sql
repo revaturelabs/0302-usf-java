@@ -43,7 +43,7 @@ create table products(
 
 create table ordered_products(
 	order_id integer references orders(order_number),
-	product_id integer references products(product_id)	
+	product_id integer references products(product_id)
 );
 
 --fill the tables
@@ -71,3 +71,4 @@ delete from address where address_id = 101;
 
 insert into address values (2,2,'elms');
 delete from customer where id=2;
+
