@@ -48,7 +48,6 @@ public class GiraffeUi {
 			System.exit(0);
 		default:
 			menu();
-			break;
 		}
 		
 	}
