@@ -31,7 +31,7 @@ public class MainDriver {
 		
 //		CallableStatementExample cse = new CallableStatementExample();
 //		System.out.println(cse.calMult(5, 6));
-//		pse.callProc(new Giraffe(0, "giovanni", true));
+		pse.callProc(new Giraffe(0, "giovanni", true));
 		System.out.println(pse.getAllGiraffes());
 	}
 }
