@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static com.revygit.config.PlainTextConfig.*;
+import static com.revygit.config.Envconfig.*;
 
 /**
  * 
@@ -33,7 +33,7 @@ import static com.revygit.config.PlainTextConfig.*;
 public class ConnectionUtil {
 
 	public static Connection connect() throws SQLException {
-			Connection conn = DriverManager.getConnection(url, username, password);
+			Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			return conn;
 	}
 	
