@@ -24,6 +24,8 @@ import static com.revygit.config.PlainTextConfig.*;
  *			interfaces:
  *				Connection
  *				Statement
+ *				PreparedStatement
+ *				CallableStatement
  *				ResultSet
  *			class:
  *				DriverManager
