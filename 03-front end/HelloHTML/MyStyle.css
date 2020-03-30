@@ -1,0 +1,43 @@
+/*
+    This is a comment in a css file!!!
+*/
+
+/* 
+    CSS structure:
+
+    selector {
+        property-1: value-1;
+        property-2: value-2;
+    }
+*/
+
+h1{
+    size: 5cm;
+    
+}
+
+/* body{
+    background-color: blue;
+} */
+
+p {
+    background-attachment: fixed;
+}
+
+/* if "." precedes the selecto then the selecto is targetting a class */
+.superman {
+    background-color: blue;
+}
+
+/* if "#" precedes the selector then the selector is targeting an id" */
+#greenlantern {
+    background-color: green;
+}
+
+p.superman {
+    text-align: left;
+}
+
+div.superman > * {
+    text-align: right;
+}
