@@ -5,6 +5,28 @@ What is HTML?
 	(Also note: HTML5 is the new standard, it is mainly distinguished from previous versions, with it's emphasis on video and audio being integral 
 	aspects of the language. This translates to not needing external plugins like Flash to play a video, using the in-built tag <video>.).
 
+src vs href
+	href takes the browser to the resource.
+	src brings the resource to the browser
+
+Attributes
+	an attribute is a property inside the html element that changes the 	
+		appearance or behavior of that element.
+	local and global Attributes
+	local attribute is one that can only be applied to specific elements
+		ex: method, action, charset, src, etc. 
+	global attribute is one that can be applied to any element
+		ex: id, call, style
+
+tag vs element
+	tag is between < and >
+	element is the opening to closing tags with the content in the middle
+
+inline and block
+	inline takes up as much width as the content needs
+	block takes up the entire width of the page
+
+
 Tags:
 
 <!DOCTYPE html>: Declares this document to be HTML (Hyper Text Markup Language), not exactly a true HTML tag, instead is instructions about what 

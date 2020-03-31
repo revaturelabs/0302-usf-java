@@ -41,3 +41,11 @@ p.superman {
 div.superman > * {
     text-align: right;
 }
+
+div.superman p {
+
+}
+
+#table {
+    margin: auto;
+}
