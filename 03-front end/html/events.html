@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <script src='../js/events.js' defer></script> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- we can write plain js inside script tags in the html,
+    including writing functions, declaring variables, and so on.
+    we could essentially take our entire js page and put it in here. -->
+
+    <script>
+      /**
+       * returns whether the number is even
+       */
+      function getEven(x) {
+        return x % 2 == 0;
+      }
+      /**
+       * keeps track of the count, global variable, not
+       *  for any particular button
+       */
+
+      let count = 0;
+
+      /**
+       * prints the event and the shiftKey property
+       *  to the console
+       */
+
+      function kangaroo(joey) {
+        console.log(joey);
+        console.log(joey.shiftKey);
+        call();
+      }
+    </script>
+
+    <input type="text" id="text" placeholder="type here"><br>
+
+    <input type='submit' class="btn btn-primary" id='changeMe' value="change me"><br>
+
+
+    <!-- the button will increment the count and print it to the console.
+    double click to see if it is even.
+    -->
+    <button
+      class="btn btn-dark"
+      onclick="console.error('we have clicked the button ' + ++count+ ' times')"
+      ondblclick="console.info(getEven(count))"
+    >
+      this is a button
+    </button>
+
+    <!-- the button will call the event function we made 
+    above in the script tag -->
+    <button id="myButton" class="btn btn-info" onclick="kangaroo(event)">
+      this is another button
+    </button>
+
+    <!-- change this buttons class name to be something from bootstrap -->
+    <button id='alter1'>alter me</button>
+
+    <!-- change this buttons css properties to change the color 
+        of it and its background -->
+    <button id='alter2'>alter me also</button>
+
+    <img
+      src="https://i.ytimg.com/vi/n_VAjVj0Zog/maxresdefault.jpg"
+      width="400px"
+      height="450px"
+      alt=""
+    />
+
+    <br>
+    <br>
+
+
+    <div id="div1">
+        one
+        <div id="div2">
+            two
+            <div id="div3">
+                three
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/events.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
