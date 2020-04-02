@@ -71,9 +71,11 @@ for(let item of divs){
     item.addEventListener('click',divAlert, {capture:true}); //this is for capturing,
                                                         //you can also just put true
 }
-let config = document.getElementById('text').value;
+//let config = document.getElementById('text').value;
 
-document.getElementById('changeMe').innerHTML.value=config;
+document.getElementById('changeMe').addEventListener('click',function(){
+    this.value = document.getElementById("text").value;
+});
 
 
 {/* <input type="text" id="text" placeholder="type here"><br>
@@ -96,3 +98,10 @@ document.getElementById('changeMe').innerHTML.value=config;
         https://javascript.info/bubbling-and-capturing
 
 */
+
+function money(){
+    a = "Dollar";
+    b="Euro";
+    return a,b;
+    // return b;
+}
