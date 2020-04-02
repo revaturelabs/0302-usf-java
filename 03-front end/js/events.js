@@ -132,7 +132,7 @@ function addImage() {
 //         you can add new objects to the array and the table will be updated. -->
 
 let table = document.getElementById("alterTable");
-table.setAttribute('border', '1px');
+table.setAttribute('border', '100px');
 let tableButton = document.getElementById("tableButton");
 
 tableButton.addEventListener("click", updateTable2);
