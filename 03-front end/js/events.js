@@ -122,3 +122,8 @@ function changeImage() {
     i++;    
 }
 
+document.getElementById('changeImage').addEventListener('click', addImage);
+function addImage(){
+    imageList.push(document.getElementById('text1').value);
+}
+
