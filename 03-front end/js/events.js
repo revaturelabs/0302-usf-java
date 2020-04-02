@@ -105,3 +105,20 @@ function money(){
     return a,b;
     // return b;
 }
+
+// <!-- add an event listener to this image so that everytime the mouse enters
+//         it, it will change images. add an input field to add image urls to 
+//         the image list. -->
+
+document.getElementById('image').addEventListener('mouseover', changeImage);
+
+let imageList = ["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCQlo1xt7ScPR94ZUM70j9kx3kkQmBAt9mNLdoY7KJSakQ6BQB&usqp=CAU",
+ "https://i.kym-cdn.com/photos/images/newsfeed/001/505/718/136.jpg", 
+"https://assets3.thrillist.com/v1/image/2824030/size/tl-horizontal_main_2x.jpg",
+"https://cdn.mos.cms.futurecdn.net/7cS2DrDAMFRQSMpMyfFDvW-650-80.jpg"];
+
+function changeImage() {    
+    image.src = imageList[i%imageList.length];
+    i++;    
+}
+
