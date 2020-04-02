@@ -81,4 +81,17 @@ function pk2(){
 function implant(pk){
     document.getElementById('pkInfo').innerHTML=pk.forms[0].name;
 }
-document.getElementById('pksubmit').addEventListener('click', getPk);
+document.getElementById('pksubmit').addEventListener('click', getPkBetter);
+
+//fetch api
+function getPkBetter(){
+    const pkid = document.getElementById('pkid').value;
+    fetch('http://pokeapi.co/api/v2/pokemon/'+pkid)
+        .then(response => response.json())
+        .then(console.log);
+}
+
+//the above arrow function is the equivalent to this
+function getResponseJson(response){
+    return response.json();
+}
