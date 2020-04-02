@@ -138,18 +138,33 @@ let tableButton = document.getElementById('tableButton');
 
 tableButton.addEventListener('click', updateTable);
 
-
-let myTable = [['1','Allen','1-314-522-0047','7226 Berkridge dr']];
-let tableCounter=1;
-(updateTable());
 function updateTable(){
-    let rowInsert = document.getElementById('alterTable').insertRow(tableCounter);
-    rowInsert.insertCell(0).innerHTML = myTable[0][0];
-    rowInsert.insertCell(1).innerHTML = myTable [0][1];
-    rowInsert.insertCell(2).innerHTML = myTable[0][2];
-    rowInsert.insertCell(3).innerHTML = myTable[0][3];
-    tableCounter++;
+let textId = document.getElementById('textId').value;
+let textName = document.getElementById('textName').value;
+let textPhone = document.getElementById('textPhone').value;
+let textAddress = document.getElementById('textAddress').value;
+
+table.innerHTML = table.innerHTML + `
+<tr>
+    <td>${textId}</td>
+    <td>${textName}</td>
+    <td>${textPhone}</td>
+    <td>${textAddress}</td>
+</tr>
+`;
 }
+
+// let myTable = [['1','Allen','1-314-522-0047','7226 Berkridge dr']];
+// let tableCounter=1;
+
+// function updateTable(){
+//     let rowInsert = document.getElementById('alterTable').insertRow(tableCounter);
+//     rowInsert.insertCell(0).innerHTML = myTable[0][0];
+//     rowInsert.insertCell(1).innerHTML = myTable [0][1];
+//     rowInsert.insertCell(2).innerHTML = myTable[0][2];
+//     rowInsert.insertCell(3).innerHTML = myTable[0][3];
+//     tableCounter++;
+// }
 
 // let rowInsert = document.getElementById('alterTable').insertRow(1);
 // rowInsert.insertCell(0).innerHTML = '1';
