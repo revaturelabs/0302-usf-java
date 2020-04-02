@@ -127,3 +127,33 @@ function addImage(){
     imageList.push(document.getElementById('text1').value);
 }
 
+
+
+// <!-- make this table dynamic. create an object array and fill the table
+//         with the objects in that array. then make input fields so that
+//         you can add new objects to the array and the table will be updated. -->
+
+let table = document.getElementById('alterTable');
+let tableButton = document.getElementById('tableButton');
+
+tableButton.addEventListener('click', updateTable);
+
+
+let myTable = [['1','Allen','1-314-522-0047','7226 Berkridge dr']];
+let tableCounter=1;
+(updateTable());
+function updateTable(){
+    let rowInsert = document.getElementById('alterTable').insertRow(tableCounter);
+    rowInsert.insertCell(0).innerHTML = myTable[0][0];
+    rowInsert.insertCell(1).innerHTML = myTable [0][1];
+    rowInsert.insertCell(2).innerHTML = myTable[0][2];
+    rowInsert.insertCell(3).innerHTML = myTable[0][3];
+    tableCounter++;
+}
+
+// let rowInsert = document.getElementById('alterTable').insertRow(1);
+// rowInsert.insertCell(0).innerHTML = '1';
+// rowInsert.insertCell(1).innerHTML = 'Allen';
+// rowInsert.insertCell(2).innerHTML = '1-314-522-0047';
+// rowInsert.insertCell(3).innerHTML = '7226 Berkridge dr';
+
