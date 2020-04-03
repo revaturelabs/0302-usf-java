@@ -23,10 +23,22 @@ function getPk(){
 // promise.then(console.log).catch(console.error);
 
 function implant(pk){
-    let Poke = new Pokemon(pk.name, pk.abilities, pk.image, pk.types);
-    document.getElementById('pkInfo').innerHTML = Poke._name + Poke._abilities + Poke._image + Poke._types;
+    let Poke = new Pokemon(pk.name, pk.abilities, pk.sprites, pk.types);
+    let move = "";
+    let poketype = "";
+    for(let x= 0; x< Poke._abilities.length; x++){
+        move = move + "  " + Poke._abilities[x].ability.name;
+    }
+    for(let y of Poke._types){
+        poketype = poketype + "  " + y.type.name; 
+    }
+    document.getElementById('pkInfo').innerHTML = 'Name: ' + Poke._name 
+    + '<br></br>' + 'Abilities: ' + move
+    + '<br></br>' + 'Pokemon types: ' + poketype
+    + '<br></br>' + "<img src = ' " + pk.sprites.front_shiny + "' /> ";
 
     console.log(Poke);
+    console.log(pk);
     
 
 }
