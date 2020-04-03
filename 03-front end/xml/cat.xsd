@@ -4,6 +4,15 @@
         Xml Schema Definition
     xmlns
         xml namespace
+    well formed and valid
+        if a xml document is syntactically correct, it is well formed
+        for a xml document to be valid, it must be checked against 
+            an xsd and be well formed.
+        an xml can be well formed without being valid, but it cannot
+            be valid without being well formed.
+    
+            check if your xml is valid and well formed here:
+            http://www.utilities-online.info/xsdvalidation/#.Xod6Z4hKjIU
  -->
 
  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
