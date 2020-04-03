@@ -32,10 +32,10 @@ function implant(pk){
     for(let y of Poke._types){
         poketype = poketype + "  " + y.type.name; 
     }
-    document.getElementById('pkInfo').innerHTML = 'Name: ' + Poke._name 
+    document.getElementById('pkInfo').innerHTML = '<br>' + 'Name: ' + Poke._name 
     + '<br></br>' + 'Abilities: ' + move
     + '<br></br>' + 'Pokemon types: ' + poketype
-    + '<br></br>' + "<img src = ' " + pk.sprites.front_shiny + "' /> ";
+    + '<br></br>' + "<img src = ' " + Poke._image.front_shiny + "' /> ";
 
     console.log(Poke);
     console.log(pk);
