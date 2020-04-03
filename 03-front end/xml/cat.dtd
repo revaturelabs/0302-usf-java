@@ -1,0 +1,16 @@
+<!ELEMENT cats (cat+)>
+<!ELEMENT cat (lives, moves, breed)>
+<!ELEMENT lives (#PCDATA)>
+<!ELEMENT moves (#PCDATA)>
+<!ELEMENT breed (size, color, hasPattern)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT hasPattern (#PCDATA)>
+
+
+<!-- 
+    DTD Document Type Definition
+
+    PCDATA = parsed character data
+        in a dtd, everything is a string
+ -->

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE cats SYSTEM "./cat.dtd">
+<!-- <!DOCTYPE cats [
+<!ELEMENT cats (cat+)>
+<!ELEMENT cat (lives, moves, breed)>
+<!ELEMENT lives (#PCDATA)>
+<!ELEMENT moves (#PCDATA)>
+<!ELEMENT breed (size, color, hasPattern)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT hasPattern (#PCDATA)>
+]> -->
+<cats>
+    <cat>
+        <lives>9</lives>
+        <moves>karatey</moves>
+        <breed>
+            <size>medium</size>
+            <color>crimson</color>
+            <hasPattern>true</hasPattern>
+        </breed>
+    </cat>
+    <cat>
+        <lives>9</lives>
+        <moves>karatey</moves>
+        <breed>
+            <size>medium <![CDATA[< here we are &]]></size>
+            <color>crimson</color>
+            <hasPattern>true</hasPattern>
+        </breed>
+    </cat>
+    <cat>
+        <lives>9</lives>
+        <moves>karatey</moves>
+        <breed>
+            <size>medium</size>
+            <color>crimson</color>
+            <hasPattern>true</hasPattern>
+        </breed>
+    </cat>
+    
+</cats>

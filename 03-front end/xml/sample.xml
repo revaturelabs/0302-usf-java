@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    what does xml stand for?
+        eXtensible Markup Language
+    what is xml used for?
+        storing and transporting data
+ -->
+
+ <notes>
+     <note>
+         <to>kermit the frog</to>
+         <from>Ben</from>
+         <heading>what happened to miss piggy</heading>
+         <body>i miss her</body>
+     </note>
+     <note>
+         <to></to>
+         <from></from>
+         <heading></heading>
+         <body></body>
+     </note>
+ </notes>
