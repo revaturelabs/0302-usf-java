@@ -27,15 +27,17 @@ function implant(pk){
     let move = "";
     let poketype = "";
     for(let x= 0; x< Poke._abilities.length; x++){
-        move = move + "  " + Poke._abilities[x].ability.name;
+        move = move + "  " + Poke._abilities[x].ability.name + ", ";
     }
+    move = move.substring(0,move.length-2);
     for(let y of Poke._types){
-        poketype = poketype + "  " + y.type.name; 
+        poketype = poketype + "  " + y.type.name + ", "; 
     }
+    poketype = poketype.substring(0,poketype.length-2);
     document.getElementById('pkInfo').innerHTML = '<br>' + 'Name: ' + Poke._name 
     + '<br></br>' + 'Abilities: ' + move
     + '<br></br>' + 'Pokemon types: ' + poketype
-    + '<br></br>' + "<img src = ' " + Poke._image.front_shiny + "' /> ";
+    + '<br></br>' + "<img src = ' " + Poke._image.front_default + "' /> ";
 
     console.log(Poke);
     console.log(pk);
