@@ -19,9 +19,15 @@ function getPk(){
     .then(json => implant(json));
 }
 
+// const promise = new Promise();
+// promise.then(console.log).catch(console.error);
+
 function implant(pk){
-    console.log(pk);
-    document.getElementById('pkInfo').innerHTML = pk.name;
+    let Poke = new Pokemon(pk.name, pk.abilities, pk.image, pk.types);
+    document.getElementById('pkInfo').innerHTML = Poke._name + Poke._abilities + Poke._image + Poke._types;
+
+    console.log(Poke);
+    
 
 }
 
@@ -63,15 +69,15 @@ class Pokemon {
 }
 
 
-function displayPokemons(pk){
-    let name1 = document.getElementById('pkInfo').innerHTML.pk.name;
-    let ability1 = document.getElementById('pkInfo').innerHTML.pk.abilities;
-    let image1 = document.getElementById('pkInfo').innerHTMLpk.sprin;
-    let type1 = document.getElementById('pkInfo').innerHTML.pk.type;
-    const Poke = new Pokemon(name1, ability1, image1, type1);
-}
+// function displayPokemons(pk){
+//     let name1 = document.getElementById('pkInfo').innerHTML.pk.name;
+//     let ability1 = document.getElementById('pkInfo').innerHTML.pk.abilities;
+//     let image1 = document.getElementById('pkInfo').innerHTMLpk.sprin;
+//     let type1 = document.getElementById('pkInfo').innerHTML.pk.type;
+//     const Poke = new Pokemon(name1, ability1, image1, type1);
+// }
 
 
 
-console.log(Poke);
+
 
