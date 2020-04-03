@@ -1,0 +1,22 @@
+{
+    "cats": [
+        {
+            "lives":9,
+            "moves":"claw to death",
+            "breed":{
+                "color":"green, from the spray can",
+                "size":"large",
+                "hasPattern":true
+            }
+        },
+        {
+            "lives":97676767,
+            "moves":"infinite lives",
+            "breed":{
+                "color":"dirt brown, like the sands of time",
+                "size":"limitless",
+                "hasPattern":false
+            }
+        }
+    ]
+}
