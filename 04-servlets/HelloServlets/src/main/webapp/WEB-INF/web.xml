@@ -16,4 +16,27 @@
   	<servlet-name>first</servlet-name>
   	<url-pattern>/first</url-pattern>
   </servlet-mapping>
+  
+  <!-- register the servlet with tomcat, note it needs the fully 
+  			qualified name for the class -->
+  <servlet>
+  	<servlet-name>direct</servlet-name>
+  	<servlet-class>com.servlet.direct.DirectServlet</servlet-class>
+  </servlet>
+  
+  <!-- map the servlet to a url pattern -->
+  <servlet-mapping>
+  	<servlet-name>direct</servlet-name>
+  	<url-pattern>/direct</url-pattern>
+  </servlet-mapping>
+  
+  <!-- you can have multiple url patterns for servlets -->
+  <servlet-mapping>
+  	<servlet-name>direct</servlet-name>
+  	<url-pattern>/somewhere</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
 </web-app>
