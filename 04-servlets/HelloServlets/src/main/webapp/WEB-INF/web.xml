@@ -6,7 +6,10 @@
     <welcome-file>index.html</welcome-file>
    
   </welcome-file-list>
-  
+  <context-param>
+  	<param-name>contextual param</param-name>
+  	<param-value>woah this is contextual!!!</param-value>
+  </context-param>
   <servlet>
   	<servlet-name>first</servlet-name>
   	<servlet-class>com.servlet.direct.FirstServlet</servlet-class>
@@ -34,6 +37,47 @@
   <servlet-mapping>
   	<servlet-name>direct</servlet-name>
   	<url-pattern>/somewhere</url-pattern>
+  </servlet-mapping>
+  
+   <!-- load on startup will determine when the servlet is initialized
+  			a positive number or 0 will load it eagerly while
+  			a negative number will load it lazily, also this is
+  			default if left out completely -->
+  <servlet>
+  	<servlet-name>indirect</servlet-name>
+  	<servlet-class>com.servlet.indirect.ForwardAndRedirectServlet</servlet-class>
+  	<load-on-startup>-1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>indirect</servlet-name>
+  	<url-pattern>/mighty</url-pattern>
+  </servlet-mapping>
+  
+ 
+  <servlet>
+  	<servlet-name>life</servlet-name>
+  	<servlet-class>com.servlet.indirect.LifecycleServlet</servlet-class>
+  	<init-param>
+  		<param-name>first-param</param-name>
+  		<param-value>this is the first init parameter</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>life</servlet-name>
+  	<url-pattern>/eddiem</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>form</servlet-name>
+  	<servlet-class>com.servlet.form.FormServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>form</servlet-name>
+  	<url-pattern>/form</url-pattern>
   </servlet-mapping>
   
   
