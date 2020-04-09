@@ -1,11 +1,17 @@
 package com.example.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.sun.xml.internal.txw2.annotation.XmlElement;
+
+@XmlRootElement(name="Clown")
 public class Clown {
 
 	private int id;
 	private String name;
 	private boolean scary;
 
+	@XmlElement
 	public int getId() {
 		return id;
 	}
@@ -13,7 +19,8 @@ public class Clown {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	@XmlElement
 	public String getName() {
 		return name;
 	}
@@ -22,6 +29,7 @@ public class Clown {
 		this.name = name;
 	}
 
+	@XmlElement
 	public boolean isScary() {
 		return scary;
 	}

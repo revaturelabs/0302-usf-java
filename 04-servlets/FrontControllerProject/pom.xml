@@ -16,5 +16,29 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.2.8</version>
 		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+			this will bind the class so that each instance can be marshalled into 
+				json format
+		 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.2</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+			this will bind the class so that each instance can be marshalled into
+				xml format
+		 -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+
 	</dependencies>
 </project>
