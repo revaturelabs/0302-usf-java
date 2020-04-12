@@ -1,8 +1,8 @@
 package com.example.model;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.sun.xml.internal.txw2.annotation.XmlElement;
 
 @XmlRootElement(name="Clown")
 public class Clown {
