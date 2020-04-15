@@ -1,0 +1,15 @@
+{
+  "name": "firstnpmproject",
+  "version": "1.0.0",
+  "description": "this is the first npm project for this batch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "robert the beast",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-art": "^2.5.0"
+  }
+}
