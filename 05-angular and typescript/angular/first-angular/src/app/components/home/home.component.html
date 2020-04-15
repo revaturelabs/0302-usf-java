@@ -14,3 +14,58 @@
 
 <h3>Event Binding</h3>
 <button (click)="incrementCounter()">increment</button>{{counter}}
+<h4>
+  Instead of attaching event listeners, we can just bind the event to the method
+  The syntax goes like this:
+  <code>(event)="function_invocation"</code>
+  Event-Binding is the process of linking actions to dom events. Recall that DOM
+  events can be user interactions like mouse movements, key presses or button clicks,
+  as well as browser actions like load and refresh. In Angular, we can bind component
+  functions to these actions using the event binding syntax.
+</h4>
+
+<h3 [style.color]="color">Property Binding</h3>
+<h4>
+  Elements on a page all have predefined properties. For example, an
+  <code>img</code> element has a <code>src</code> property and input Elements
+  have a <code>disabled</code> property.
+</h4>
+
+<input type="submit" [value]="someBool" [disabled]='someBool'>
+<button (click)="toggleBool()">Toggle</button>
+
+<p>Two way data binding uses the <code>[()]</code>
+</p>
+<input type="text" [(ngModel)]="myName"> My name is {{myName}}
+
+<p>ngModel is also know as a directive</p>
+
+<h3>Directives</h3>
+<p>Angular directives are specially built keywords or instructions that typically
+  render html code or provide additional functionality.
+</p>
+<p>There are three different types of directives</p>
+<ul>
+  <li><em>Structural Directives</em></li>
+  <li><em>Attribute Directives</em></li>
+  <li><em>Component Directives</em></li>
+</ul>
+
+<p>we can make our own custom directives with the <code>@directive</code> decorator</p>
+
+<ol>
+  <li *ngFor="let temp of superheroes" >
+    {{temp}}
+  </li>
+</ol>
+<p>rope is in charge</p>
+<img [src]="url" alt="rope is in charge" *ngIf="someBool">
+
+<p>this is an attribute directive. We can use ngModel with forms and
+  see how they can all be used</p>
+
+<p [ngStyle]='styles'>the style is changing</p>
+
+<p>component directive</p>
+<p>this is an example of a component directive</p>
+<app-page></app-page>

@@ -3,19 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { FormsModule } from '@angular/forms';
+import { APageComponent } from './components/a-page/a-page.component';
 @NgModule({
   //the classes related to views that you create go here. There can
   //  can be three types of classes that relate to views:
   //  components, directives, and pipes
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    APageComponent
   ],
   imports: [
     //we need to import other modules when we need its classes
     //  inside our components
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   //this is where we register our services
   providers: [],
