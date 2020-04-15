@@ -8,6 +8,8 @@ import { Component, OnInit } from "@angular/core";
 export class HomeComponent implements OnInit {
   constructor() {}
 
+  currentTime: Date;
+
   name: string = "home";
 
   counter: number = 0;
@@ -37,11 +39,19 @@ export class HomeComponent implements OnInit {
     border: "30px dashed yellow",
   };
 
+  obj = {
+    carAmount: 77,
+    favoriteColor: "all of them",
+    happy: true,
+  };
+
   toggleBool() {
     this.someBool = !this.someBool;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setInterval(() => (this.currentTime = new Date()), 1000);
+  }
 
   incrementCounter() {
     this.counter++;

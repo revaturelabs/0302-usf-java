@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { APageComponent } from './components/a-page/a-page.component';
+import { SqrtPipe } from './pipes/sqrt.pipe';
 @NgModule({
   //the classes related to views that you create go here. There can
   //  can be three types of classes that relate to views:
@@ -12,7 +13,8 @@ import { APageComponent } from './components/a-page/a-page.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    APageComponent
+    APageComponent,
+    SqrtPipe
   ],
   imports: [
     //we need to import other modules when we need its classes

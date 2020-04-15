@@ -69,3 +69,13 @@
 <p>component directive</p>
 <p>this is an example of a component directive</p>
 <app-page></app-page>
+
+<h4>Pipes</h4>
+<p>
+  {{color | uppercase}}
+  {{obj | json}}
+  {{currentTime | date:"mediumTime"}}
+</p>
+
+<input type="number" [(ngModel)]='counter'>
+{{counter | sqrt}}
