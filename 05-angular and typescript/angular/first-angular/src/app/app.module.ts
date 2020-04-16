@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { APageComponent } from './components/a-page/a-page.component';
 import { SqrtPipe } from './pipes/sqrt.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { PoketableComponent } from './components/poketable/poketable.component';
 @NgModule({
   //the classes related to views that you create go here. There can
   //  can be three types of classes that relate to views:
@@ -14,13 +16,15 @@ import { SqrtPipe } from './pipes/sqrt.pipe';
     AppComponent,
     HomeComponent,
     APageComponent,
-    SqrtPipe
+    SqrtPipe,
+    PoketableComponent
   ],
   imports: [
     //we need to import other modules when we need its classes
     //  inside our components
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   //this is where we register our services
   providers: [],

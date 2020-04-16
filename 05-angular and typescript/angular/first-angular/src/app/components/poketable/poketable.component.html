@@ -1,0 +1,20 @@
+<input type="text" #pokemonId>
+<button (click)="getPokeById(pokemonId.value)">get Poke</button>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>HEIGHT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let poke of pokemans">
+      <td> {{poke.id}} </td>
+      <td> {{poke.name}} </td>
+      <td> {{poke.type}} </td>
+      <td> {{poke.height}} </td>
+    </tr>
+  </tbody>
+</table>
