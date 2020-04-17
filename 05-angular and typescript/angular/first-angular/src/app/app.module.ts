@@ -1,13 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms';
-import { APageComponent } from './components/a-page/a-page.component';
-import { SqrtPipe } from './pipes/sqrt.pipe';
-import { HttpClientModule } from '@angular/common/http';
-import { PoketableComponent } from './components/poketable/poketable.component';
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./components/home/home.component";
+import { FormsModule } from "@angular/forms";
+import { APageComponent } from "./components/a-page/a-page.component";
+import { SqrtPipe } from "./pipes/sqrt.pipe";
+import { HttpClientModule } from "@angular/common/http";
+import { PoketableComponent } from "./components/poketable/poketable.component";
+import { RouterModule } from "@angular/router";
+import { NavComponent } from './components/nav/nav.component';
 @NgModule({
   //the classes related to views that you create go here. There can
   //  can be three types of classes that relate to views:
@@ -17,21 +19,28 @@ import { PoketableComponent } from './components/poketable/poketable.component';
     HomeComponent,
     APageComponent,
     SqrtPipe,
-    PoketableComponent
+    PoketableComponent,
+    NavComponent,
   ],
   imports: [
     //we need to import other modules when we need its classes
     //  inside our components
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: "", redirectTo: "home", pathMatch: "full" },
+      { path: "pokes", component: PoketableComponent },
+      { path: "home", component: HomeComponent },
+      { path: "*", redirectTo: "home", pathMatch: "full" },
+    ]),
   ],
   //this is where we register our services
   providers: [],
   //this is the root component which is the main view of the app
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 
 /*
   Angular provides its own system of organization of code and funcitonality

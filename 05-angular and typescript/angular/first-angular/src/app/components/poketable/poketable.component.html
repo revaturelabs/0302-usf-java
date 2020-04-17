@@ -1,12 +1,13 @@
 <input type="text" #pokemonId>
 <button (click)="getPokeById(pokemonId.value)">get Poke</button>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>ID</th>
       <th>NAME</th>
       <th>TYPE</th>
       <th>HEIGHT</th>
+      <th>IMAGE</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
       <td> {{poke.name}} </td>
       <td> {{poke.type}} </td>
       <td> {{poke.height}} </td>
+      <td> <img [src]="poke.img" alt="no image available"> </td>
     </tr>
   </tbody>
 </table>

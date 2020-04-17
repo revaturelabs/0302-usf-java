@@ -21,6 +21,7 @@ export class PoketableComponent implements OnInit {
           name: p.name,
           type: p.types[0].type.name,
           height: p.height,
+          img: p.sprites.front_default
         });
       });
   }

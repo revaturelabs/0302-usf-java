@@ -1,0 +1,12 @@
+.table {
+  width: 80%;
+  border: 3px solid black;
+  /* margin: auto; */
+}
+.table td {
+  border: 1px solid black;
+  text-align: center;
+}
+.table th {
+  border: 1px solid black;
+}
