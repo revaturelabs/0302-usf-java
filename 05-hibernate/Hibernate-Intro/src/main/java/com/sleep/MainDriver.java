@@ -11,9 +11,10 @@ public class MainDriver {
 	public static void main(String[] args) {
 		RestaurantDao rd = new RestaurantDao();
 		makeRes().stream().forEach(e->rd.save(e));
-		System.out.println(rd.getById(1));
-		System.out.println(rd.getById(2));
-		System.out.println(rd.getById(3));
+//		System.out.println(rd.getById(1));
+//		System.out.println(rd.getById(2));
+//		System.out.println(rd.getById(3));
+		System.out.println(rd.findByName("burger king"));
 	}
 	
 	static List<Restaurant> makeRes(){
