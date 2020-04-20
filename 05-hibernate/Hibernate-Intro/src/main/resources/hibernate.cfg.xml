@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- the name of this file is important. you can specify the name of the
+		file if it is different when we create the session factory. if you
+		dont specify the file, it will default to looking for this file. -->
+		
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<!-- 
+	What is Hibernate?
+		ORM framework
+		Persistence Framework
+	What is an ORM?
+		Object relational Mapping. ORM's take objects in programming languages
+		and translate them into tables in your db.
+	What is persistence?
+		Storing information/data in a form that is durable.
+	
+	What are some benefits to using hibernate?
+		-As developers, we no longer have to write complex sql queries. Hibernate will perform
+			lots of the complexity for us.
+		-Object Oriented
+		-fast
+			-Optimized for db operations.
+			-It uses connection pools to minimize bottle necked speeds caused by performing
+				db connections.
+			-Hibernate is Modular. You are able to write code using hibernate and later
+				switch sql languages by simply changing out which driver you are using.
+				No need to alter code, just change some configurations.
+ -->
+
+<hibernate-configuration>
+	<!-- jdbc stuff -->
+	<session-factory>
+		<property name="hibernate.connection.username">rc_admin</property>
+		<property name="hibernate.connection.password">p4ssw0rd</property>
+		<property name="hibernate.connection.url">
+			jdbc:postgresql://postgresql-class.cks98gmxels6.us-west-1.rds.amazonaws.com:5432/java0302
+		</property>
+		<property name="hibernate.connection.driver.class">org.postgresql.Driver</property>
+		<property name="hibernate.default_schema">hiber_schema</property>
+
+		<!-- hibernate will be doing alot for us, this is how hibernate knows 
+				how to syntactically communicate with the db -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- this property tells hibernate to print the sql statements to the console -->
+		<property name="hibernate.connection.show_sql">true</property>
+
+		<!-- this tells hibernate to format the sql statements so they are 
+				human readable -->
+		<property name="hibernate.connection.format_sql">true</property>
+
+		<!-- this property tells hibernate how many connections to maintain at one time -->
+		<property name="hibernate.connection.pool_size">1</property>
+		<!-- hibernate mapping to data definition language
+				potential values:
+					create: create your schema for you. if there is already tables, it drops them.
+								dont use for prod.
+					update: updates the schema to whatever changed. does not drop the tables.
+					validate: validates the schema and will tell you if the constructed schema 
+								is incorrect.
+					create-drop: will drop the tables if something goes wrong, creates if not there.
+					none: doesn't change anything (default) 
+					
+					 -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!-- <mapping resource="hibernate.hbm.xml"/> -->
+		<mapping class="com.sleep.model.Restaurant"/>
+		<mapping class="com.sleep.model.Customer"/>
+	</session-factory>
+</hibernate-configuration>
