@@ -3,8 +3,11 @@ package com.springy.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.springy.model.User;
 
+@Repository
 public class MockDao {
 	
 	public List<User> getAllUsers(){
