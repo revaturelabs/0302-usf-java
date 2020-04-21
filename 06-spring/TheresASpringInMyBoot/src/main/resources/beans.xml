@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- each of these is a class that we need spring to manage for us.
+			any instance that spring manages is known as a spring bean
+			therefore, each of these is a spring bean
+			telling spring how to manage these beans in regards
+			to which dependencies they need, is known as bean wiring -->
+			
+			
+			
+
+	<!-- <bean id="dao" class="com.springy.dao.MockDao" /> -->
+	
+	
+	<!-- 
+		there are four types of dependency injection
+			constructor injection - supported
+			setter injection - supported
+			field injection - unofficially supported
+			interface injection - not supported
+	 -->
+	
+	
+		<!-- setter injection -->
+		<!-- <bean class="com.springy.service.MockService">
+			property specifies the property inside the class
+					we need to put the name of the property
+					and the reference to which instance it needs
+		<property name="md" ref="dao"/>
+	</bean> -->
+	
+	<!-- 
+		scopes of a spring bean:
+			spring 4:
+				singleton 		- (default) only one instance over several references
+				prototype 		- one instance for each reference
+				Request 		- one instance for each http request
+				Session			- one instance for each session
+				GlobalSession	- one instance for all sessions
+				
+			spring 5 (keep in your back pocket for later)
+				singleton
+				prototype
+				request
+				session
+				application		ties the instance to the lifecycle of a servlet context
+				websocket		ties the instance to the lifecycle of a websocket
+	 -->
+	
+	<!-- constructor injection -->
+	<!-- <bean id="mockWahlburg" class="com.springy.service.MockService" scope="prototype">
+		<constructor-arg index="0" ref="dao"/>
+	</bean> -->
+	
+	
+	
+	
+	<bean id="dao" class="com.springy.dao.MockDao"/>
+	
+	
+	<!-- 
+		autowiring
+			"no" 			does not autowire. sets it to off.
+			"byType"		means that spring will autowire bu looking
+								at the class' property datatypes, then 
+								matching that to beans in the ioc container.
+								it uses setter injection to inject the beans
+			"byName"		looks at the class' property variable names and 
+								finds beans in the container with the same names.
+								it uses setter injection.
+			"constructor"	works similar to byType, except it uses a constructor
+								with the most distinct dependencies. It then matches 
+								the types to beans in the ioc container.
+	 -->
+	
+	
+	<bean id="mockWahlburg" class="com.springy.service.MockService" autowire="constructor"/>
+		 
+</beans>
