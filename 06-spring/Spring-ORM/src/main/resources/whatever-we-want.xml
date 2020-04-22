@@ -32,7 +32,7 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="datasource" />
 		<property name="packagesToScan" value="com.orm.model" />
 		<property name="hibernateProperties">
 
@@ -43,6 +43,7 @@
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.default_schema">hiber_schema</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.connection.isolation">repeatable_read</prop>
 
 			</props>
 
