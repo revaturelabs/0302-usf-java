@@ -26,6 +26,7 @@ public class Driver {
 //		violations.stream().forEach(e->System.out.println(e.getMessage()));
 		
 		insertInitialValues();
+		System.out.println(ac.getBean(LightSaberDao.class).findAll());
 	}
 	
 	private static void insertInitialValues() {
