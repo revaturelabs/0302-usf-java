@@ -2,6 +2,8 @@ package com.webby.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -9,12 +11,13 @@ import org.springframework.stereotype.Repository;
 import com.webby.model.Glue;
 
 @Repository
+@Transactional
 public class GlueDao implements DaoContract<Glue, Integer> {
 	
 	private SessionFactory sesfact;
 	
 	@Autowired
-	public void setSesFact(SessionFactory sse) {
+	public GlueDao(SessionFactory sse) {
 		sesfact=sse;
 	}
 

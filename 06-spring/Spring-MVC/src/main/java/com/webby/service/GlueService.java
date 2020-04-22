@@ -5,16 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.webby.dao.DaoContract;
 import com.webby.dao.GlueDao;
 import com.webby.model.Glue;
 
 @Service
 public class GlueService {
 
-	private GlueDao gluer;
+	private DaoContract<Glue, Integer> gluer;
 	
 	@Autowired
-	public GlueService(GlueDao dd) {
+	public void setGluer(DaoContract<Glue, Integer> dd) {
 		gluer=dd;
 	}
 	
