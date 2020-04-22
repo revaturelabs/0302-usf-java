@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.orm.model.LightSabers;
 
 @Repository
+@Transactional
 public class LightSaberDao {
 
 	private SessionFactory sesfact;
@@ -21,7 +22,7 @@ public class LightSaberDao {
 	}
 	
 	//just hibernate...opening a session with the session factory, beginning a transaction, saving the instance, commit
-	@Transactional
+//	@Transactional
 	public void insert(LightSabers ls) {
 //		Session ses= sesfact.openSession();
 //		Transaction tx = ses.beginTransaction();
@@ -30,12 +31,12 @@ public class LightSaberDao {
 		sesfact.openSession().save(ls);
 	}
 	
-	@Transactional
+//	@Transactional
 	public LightSabers findById(int id) {
 		return sesfact.openSession().get(LightSabers.class, id);
 	}
 	
-	@Transactional
+//	@Transactional
 	public List<LightSabers> findAll(){
 		return sesfact.openSession().createQuery("from LightSabers", LightSabers.class).list();
 	}
