@@ -6,5 +6,8 @@
 	 https://www.springframework.org/schema/beans/spring-beans.xsd
 	 ">
 	 
-	 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"></bean>
+	 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 	<property name="prefix" value="html/"/>
+	 	<property name="suffix" value=".html"/>
+	 </bean>
 </beans>
