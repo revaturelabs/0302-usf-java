@@ -27,4 +27,21 @@ public class GlueService {
 		gluer.save(g);
 		return g;
 	}
+	
+	public Glue update(Glue g) {
+		gluer.update(g);
+		return g;
+	}
+	
+	public void delete(Glue g) {
+		gluer.delete(g);
+	}
+	
+	public void deleteById(int id) {
+		gluer.deleteById(id);
+	}
+	
+	public Glue findById(int id) {
+		return gluer.findById(id);
+	}
 }

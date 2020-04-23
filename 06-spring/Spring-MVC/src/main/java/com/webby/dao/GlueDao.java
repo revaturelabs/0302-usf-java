@@ -13,12 +13,12 @@ import com.webby.model.Glue;
 @Repository
 @Transactional
 public class GlueDao implements DaoContract<Glue, Integer> {
-	
+
 	private SessionFactory sesfact;
-	
+
 	@Autowired
 	public GlueDao(SessionFactory sse) {
-		sesfact=sse;
+		sesfact = sse;
 	}
 
 	@Override
@@ -28,32 +28,28 @@ public class GlueDao implements DaoContract<Glue, Integer> {
 
 	@Override
 	public Glue findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return sesfact.openSession().get(Glue.class, id);
 	}
 
 	@Override
 	public void save(Glue t) {
 		sesfact.openSession().save(t);
-		
+
 	}
 
 	@Override
 	public void update(Glue t) {
-		// TODO Auto-generated method stub
-		
+		sesfact.getCurrentSession().update(t);
 	}
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		
+		sesfact.getCurrentSession().delete(findById(id));
 	}
 
 	@Override
 	public void delete(Glue t) {
-		// TODO Auto-generated method stub
-		
+		sesfact.getCurrentSession().delete(t);
 	}
 
 }
