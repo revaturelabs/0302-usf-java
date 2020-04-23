@@ -1,0 +1,19 @@
+<table class="table table-striped table-dark">
+  <caption>this is our table of different glues</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Sticky Level</th>
+      <th scope="col">Is it crazy?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let temp of glues'>
+      <th scope="row"> {{temp.id}} </th>
+      <td> {{temp.brand}} </td>
+      <td>{{temp.stickyLevel}}</td>
+      <td>{{temp.crazy}}</td>
+    </tr>
+  </tbody>
+</table>
