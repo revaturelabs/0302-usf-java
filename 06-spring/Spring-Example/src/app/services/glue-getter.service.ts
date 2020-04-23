@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Glue } from '../models/glue';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +12,11 @@ export class GlueGetterService {
 
   public getGlues(): Promise<Glue[]> {
     return this.http
-      .get<Glue[]>('http://localhost:8080/Spring-MVC/all.app')
+      .get<Glue[]>(environment.base_url+'all.app')
       .toPromise();
   }
 
   public saveGlue(glue: Glue): Promise<Glue> {
-    return this.http.post<Glue>('http://localhost:8080/Spring-MVC/glue.app', glue).toPromise();
+    return this.http.post<Glue>(environment.base_url+'glue.app', glue).toPromise();
   }
 }

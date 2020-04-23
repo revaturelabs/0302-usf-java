@@ -19,7 +19,7 @@ import com.webby.model.Glue;
 import com.webby.service.GlueService;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:9012")
+@CrossOrigin(origins = "*")
 public class GlueController {
 
 	@Autowired
