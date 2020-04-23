@@ -12,7 +12,9 @@ export class GlueDisplayComponent implements OnInit {
 
   constructor(private gluegetter: GlueGetterService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getGlue();
+  }
 
   public getGlue() {
     this.gluegetter.getGlues().then((e) => this.glues = e);

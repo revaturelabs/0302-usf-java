@@ -1,0 +1,22 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Brand</label>
+      <input [(ngModel)]='glue.brand' name="brand" type="text" class="form-control" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Sticky level</label>
+      <input [(ngModel)]='glue.stickyLevel' name="sticky" type="number" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+
+    <div class="form-group col-md-4">
+      <label for="inputState">crazy</label>
+      <select [(ngModel)]='glue.crazy' name="crazy" id="inputState" class="form-control">
+        <option selected>true</option>
+        <option>false</option>
+      </select>
+    </div>
+
+  <button type="submit" (click)="addGlue(glue)" class="btn btn-primary">add glue</button>
+</form>

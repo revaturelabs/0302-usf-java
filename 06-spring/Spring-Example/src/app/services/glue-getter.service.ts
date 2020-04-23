@@ -13,4 +13,8 @@ export class GlueGetterService {
       .get<Glue[]>('http://localhost:8080/Spring-MVC/all.app')
       .toPromise();
   }
+
+  public saveGlue(glue: Glue): Promise<Glue> {
+    return this.http.post<Glue>('http://localhost:8080/Spring-MVC/glue.app', glue).toPromise();
+  }
 }
