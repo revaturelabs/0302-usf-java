@@ -10,7 +10,7 @@ export class GlueGetterService {
 
   public getGlues(): Promise<Glue[]> {
     return this.http
-      .get<Glue[]>('localhost:8080/Spring-MVC/all.app')
+      .get<Glue[]>('http://localhost:8080/Spring-MVC/all.app')
       .toPromise();
   }
 }
