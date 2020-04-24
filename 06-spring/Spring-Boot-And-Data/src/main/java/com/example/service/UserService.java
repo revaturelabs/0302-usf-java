@@ -49,7 +49,7 @@ class User {
 	}
 
 	enum roles {
-		CUSTOMER, EMPLOYEE, ADMIN	
+		CUSTOMER, EMPLOYEE, ADMIN
 	}
 
 	public String getUsername() {
