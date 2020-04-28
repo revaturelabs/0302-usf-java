@@ -1,0 +1,17 @@
+#this is yaml file
+# what does yaml stand for?
+#   yaml aint markup language
+# you can make application and bootstrap files 
+#   a .properties or a .yml (.yaml) file. it is
+#   optional.
+# the difference between the two files (application vs bootstrap)
+#   is that this one gets loaded first
+
+spring:
+  application:
+    name: api-gateway
+    
+eureka:  client:    fetch-registry: true
+    register-with-eureka: true
+    eureka-server-port: 8761 #optional, default port for eureka
+
