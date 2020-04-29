@@ -15,3 +15,12 @@ eureka:  client:    fetch-registry: true
     register-with-eureka: true
     eureka-server-port: 8761 #optional, default port for eureka
 
+zuul:  routes:
+    horror:
+      path: /horror/**
+      service-id: horror-movies
+      strip-prefix: false
+    scifi:
+      path: /scifi/**
+      service-id: scifi
+      strip-prefix: false

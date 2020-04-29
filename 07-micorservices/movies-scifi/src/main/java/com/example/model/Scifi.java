@@ -47,9 +47,11 @@ public class Scifi {
 		this.notCheap = scary;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Horror [id=" + id + ", title=" + title + ", rating=" + rating + ", scary=" + notCheap + "]";
+		return "Scifi [id=" + id + ", title=" + title + ", rating=" + rating + ", notCheap=" + notCheap + "]";
 	}
 
 	public Scifi(int id, String title, double rating, boolean scary) {

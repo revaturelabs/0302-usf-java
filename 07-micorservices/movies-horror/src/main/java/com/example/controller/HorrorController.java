@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.model.Horror;
 import com.example.service.HorrorService;
@@ -27,5 +29,12 @@ public class HorrorController {
 	@GetMapping
 	public List<Horror> List() {
 		return hs.findAll();
+	}
+	
+	@GetMapping("stringy")
+	public String callScifi() {
+		RestTemplate rt = new RestTemplate();
+		return rt.getForObject("http://localhost:9888/scifi/stringy", String.class);
+		
 	}
 }

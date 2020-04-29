@@ -28,4 +28,9 @@ public class ScifiController {
 	public List<Scifi> List() {
 		return hs.findAll();
 	}
+	
+	@GetMapping("/stringy")
+	public String getSomething() {
+		return hs.findAll().get(0).toString();
+	}
 }
