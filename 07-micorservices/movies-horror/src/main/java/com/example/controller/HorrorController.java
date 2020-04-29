@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.model.Horror;
 import com.example.service.HorrorService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 @RequestMapping("/horror")
@@ -32,9 +33,14 @@ public class HorrorController {
 	}
 	
 	@GetMapping("stringy")
+	@HystrixCommand(fallbackMethod = "fallback")
 	public String callScifi() {
 		RestTemplate rt = new RestTemplate();
 		return rt.getForObject("http://localhost:9888/scifi/stringy", String.class);
 		
+	}
+	
+	private String fallback() {
+		return "this is not currently available";
 	}
 }
