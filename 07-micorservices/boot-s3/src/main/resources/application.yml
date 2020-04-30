@@ -1,0 +1,26 @@
+server:
+  port: 9898
+  
+
+spring:
+  autoconfigure:
+    exclude:
+    - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.context.ContextCredentialsAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.context.ContextResourceLoaderAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.mail.MailSenderAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.cache.ElastiCacheAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.messaging.MessagingAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.jdbc.AmazonRdsDatabaseAutoConfiguration
+    - org.springframework.cloud.aws.autoconfigure.metrics.CloudWatchExportAutoConfiguration
+  servlet:
+    multipart:
+      enabled: true
+      location: ${java.io.tmpdir}
+      max-file-size: 1MB
+      max-request-size: 1MB
+      
+      
+     
